@@ -1,0 +1,1527 @@
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="row align-items-center">
+            <div class="col-4">
+              <h4 class="page-title">
+                Invoices<span class="count-title">123</span>
+              </h4>
+            </div>
+            <div class="col-8 text-end">
+              <div class="head-icons">
+                <a
+                  [routerLink]="routes.invoiceList"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-original-title="Refresh"
+                  matTooltip="Refresh"
+                >
+                  <i class="ti ti-refresh-dot"></i>
+                </a>
+                <app-collapse-header></app-collapse-header>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Page Header -->
+
+        <div class="card">
+          <div class="card-header">
+            <!-- Search -->
+            <div class="row align-items-center">
+              <div class="col-sm-4">
+                <div class="icon-form mb-3 mb-sm-0">
+                  <span class="form-icon"><i class="ti ti-search"></i></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search Invoices"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div
+                  class="d-flex align-items-center flex-wrap row-gap-2 justify-content-sm-end"
+                >
+                  <div class="dropdown me-2">
+                    <a
+                      href="javascript:void(0);"
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      ><i class="ti ti-package-export me-2"></i>Export</a
+                    >
+                    <div class="dropdown-menu dropdown-menu-end">
+                      <ul>
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item"
+                            ><i class="ti ti-file-type-pdf text-danger me-1"></i
+                            >Export as PDF</a
+                          >
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);" class="dropdown-item"
+                            ><i class="ti ti-file-type-xls text-green me-1"></i
+                            >Export as Excel
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a
+                    href="javascript:void(0);"
+                    class="btn btn-primary"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvas_add"
+                    ><i class="ti ti-square-rounded-plus me-2"></i>Add New
+                    Invoices</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- /Search -->
+          </div>
+          <div class="card-body">
+            <!-- Filter -->
+            <div
+              class="d-flex align-items-center justify-content-between flex-wrap row-gap-2 mb-4"
+            >
+              <div class="d-flex align-items-center flex-wrap row-gap-2">
+                <div class="sort-dropdown drop-down task-drops me-3">
+                  <a
+                    href="javascript:void(0);"
+                    class="dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    >All Invoices
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-start">
+                    <ul>
+                      <li>
+                        <a href="javascript:void(0);">
+                          <i class="ti ti-dots-vertical"></i>All Invoices
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0);">
+                          <i class="ti ti-dots-vertical"></i>Paid
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0);">
+                          <i class="ti ti-dots-vertical"></i>Partially Paid
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0);">
+                          <i class="ti ti-dots-vertical"></i>Overdue
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0);">
+                          <i class="ti ti-dots-vertical"></i>Unpaid
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="dropdown me-2">
+                  <a
+                    href="javascript:void(0);"
+                    class="dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    ><i class="ti ti-sort-ascending-2 me-2"></i>Sort
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-start">
+                    <ul>
+                      <li>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                          <i class="ti ti-circle-chevron-right me-1"></i
+                          >Ascending
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                          <i class="ti ti-circle-chevron-right me-1"></i
+                          >Descending
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                          <i class="ti ti-circle-chevron-right me-1"></i
+                          >Recently Viewed
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                          <i class="ti ti-circle-chevron-right me-1"></i
+                          >Recently Added
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <app-date-range-picker></app-date-range-picker>
+              </div>
+              <div class="d-flex align-items-center flex-wrap row-gap-2">
+                <div class="dropdown me-2">
+                  <a
+                    href="javascript:void(0);"
+                    class="btn bg-soft-purple text-purple"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    ><i class="ti ti-columns-3 me-2"></i>Manage Columns</a
+                  >
+                  <div
+                    class="dropdown-menu dropdown-menu-md-end dropdown-md p-3"
+                  >
+                    <h4 class="mb-2 fw-semibold">Want to manage datatables?</h4>
+                    <p class="mb-3">
+                      Please drag and drop your column to reorder your table and
+                      enable see option as you want.
+                    </p>
+                    <div class="border-top pt-3">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <p class="mb-0 d-flex align-items-center">
+                          <i class="ti ti-grip-vertical me-2"></i>Estimations ID
+                        </p>
+                        <div class="status-toggle">
+                          <input type="checkbox" id="col-name" class="check" />
+                          <label for="col-name" class="checktoggle"></label>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <p class="mb-0 d-flex align-items-center">
+                          <i class="ti ti-grip-vertical me-2"></i>Client
+                        </p>
+                        <div class="status-toggle">
+                          <input type="checkbox" id="col-phone" class="check" />
+                          <label for="col-phone" class="checktoggle"></label>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <p class="mb-0 d-flex align-items-center">
+                          <i class="ti ti-grip-vertical me-2"></i>Project
+                        </p>
+                        <div class="status-toggle">
+                          <input type="checkbox" id="col-email" class="check" />
+                          <label for="col-email" class="checktoggle"></label>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <p class="mb-0 d-flex align-items-center">
+                          <i class="ti ti-grip-vertical me-2"></i>Due Date
+                        </p>
+                        <div class="status-toggle">
+                          <input type="checkbox" id="col-tag" class="check" />
+                          <label for="col-tag" class="checktoggle"></label>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <p class="mb-0 d-flex align-items-center">
+                          <i class="ti ti-grip-vertical me-2"></i>Amount
+                        </p>
+                        <div class="status-toggle">
+                          <input type="checkbox" id="col-loc" class="check" />
+                          <label for="col-loc" class="checktoggle"></label>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <p class="mb-0 d-flex align-items-center">
+                          <i class="ti ti-grip-vertical me-2"></i>Paid Amount
+                        </p>
+                        <div class="status-toggle">
+                          <input type="checkbox" id="col-rate" class="check" />
+                          <label for="col-rate" class="checktoggle"></label>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <p class="mb-0 d-flex align-items-center">
+                          <i class="ti ti-grip-vertical me-2"></i>Balance Amount
+                        </p>
+                        <div class="status-toggle">
+                          <input type="checkbox" id="col-owner" class="check" />
+                          <label for="col-owner" class="checktoggle"></label>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-3"
+                      >
+                        <p class="mb-0 d-flex align-items-center">
+                          <i class="ti ti-grip-vertical me-2"></i>Status
+                        </p>
+                        <div class="status-toggle">
+                          <input
+                            type="checkbox"
+                            id="col-status"
+                            class="check"
+                          />
+                          <label for="col-status" class="checktoggle"></label>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between"
+                      >
+                        <p class="mb-0 d-flex align-items-center">
+                          <i class="ti ti-grip-vertical me-2"></i>Action
+                        </p>
+                        <div class="status-toggle">
+                          <input
+                            type="checkbox"
+                            id="col-action"
+                            class="check"
+                          />
+                          <label for="col-action" class="checktoggle"></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-sorts dropdown me-2">
+                  <a
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    ><i class="ti ti-filter-share"></i>Filter</a
+                  >
+                  <div
+                    class="filter-dropdown-menu dropdown-menu dropdown-menu-md-end p-4"
+                  >
+                    <div class="filter-set-view">
+                      <div class="filter-set-head">
+                        <h4><i class="ti ti-filter-share"></i>Filter</h4>
+                      </div>
+                      <div class="accordion" id="accordionExample">
+                        <div class="filter-set-content">
+                          <div class="filter-set-content-head">
+                            <a
+                              href="javascript:void(0);"
+                              class="collapsed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#owner"
+                              aria-expanded="false"
+                              aria-controls="owner"
+                              >Client</a
+                            >
+                          </div>
+                          <div
+                            class="filter-set-contents accordion-collapse collapse"
+                            id="owner"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="filter-content-list">
+                              <div class="mb-2 icon-form">
+                                <span class="form-icon"
+                                  ><i class="ti ti-search"></i
+                                ></span>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="Search Client"
+                                />
+                              </div>
+                              <ul>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" checked />
+                                      <span class="checkmarks"></span>
+                                      NovaWave LLC
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      Redwood Inc
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      HarborVie w
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      CoastalStar Co.
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      RiverStone Ventur
+                                    </label>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="filter-set-content">
+                          <div class="filter-set-content-head">
+                            <a
+                              href="javascript:void(0);"
+                              class="collapsed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseThree"
+                              aria-expanded="false"
+                              aria-controls="collapseThree"
+                              >Project</a
+                            >
+                          </div>
+                          <div
+                            class="filter-set-contents accordion-collapse collapse"
+                            id="collapseThree"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="filter-content-list">
+                              <ul>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" checked />
+                                      <span class="checkmarks"></span>
+                                      Truelysell
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      Dreamsports
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      Best&#64;laundry
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      Doccure
+                                    </label>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filter-set-content">
+                          <div class="filter-set-content-head">
+                            <a
+                              href="javascript:void(0);"
+                              class="collapsed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapsethree"
+                              aria-expanded="false"
+                              aria-controls="collapsethree"
+                              >Amount</a
+                            >
+                          </div>
+                          <div
+                            class="filter-set-contents accordion-collapse collapse"
+                            id="collapsethree"
+                            data-bs-parent="#accordionExample"
+                          >
+                            <div class="filter-content-list">
+                              <div class="mb-2 icon-form">
+                                <span class="form-icon"
+                                  ><i class="ti ti-search"></i
+                                ></span>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="Search Amount"
+                                />
+                              </div>
+                              <ul>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" checked />
+                                      <span class="checkmarks"></span>
+                                      $2,15,000
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      $1,45,000
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      $2,15,000
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      $4,80,380
+                                    </label>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="filter-checks">
+                                    <label class="checkboxs">
+                                      <input type="checkbox" />
+                                      <span class="checkmarks"></span>
+                                      $2,12,000
+                                    </label>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="filter-reset-btns">
+                        <div class="row">
+                          <div class="col-6">
+                            <a href="javascript:void(0);" class="btn btn-light">Reset</a>
+                          </div>
+                          <div class="col-6">
+                            <a [routerLink]="routes.invoiceList" class="btn btn-primary"
+                              >Filter</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="view-icons">
+                  <a [routerLink]="routes.invoiceList" class="active"
+                    ><i class="ti ti-list-tree"></i
+                  ></a>
+                  <a [routerLink]="routes.invoiceGrid"
+                    ><i class="ti ti-grid-dots"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- /Filter -->
+
+            <!-- Projects List -->
+            <div class="table-responsive custom-table">
+              <table
+                class="table datatable"
+                matSort
+                (matSortChange)="sortData($event)"
+              >
+                <thead class="thead-light">
+                  <tr>
+                    <th class="no-sort">
+                       <label class="checkboxs" (click)="selectAll(initChecked)"  (keydown.enter)="selectAll(initChecked)" tabindex="0"
+                        ><input
+                          type="checkbox"
+                          id="select-all"
+                          [(ngModel)]="initChecked" /><span
+                          class="checkmarks"
+                        ></span
+                      ></label>
+                    </th>
+                    <th></th>
+                    <th mat-sort-header="invoiceid">Invoice ID</th>
+                    <th mat-sort-header="client">Client</th>
+                    <th mat-sort-header="project">Project</th>
+                    <th mat-sort-header="duedate">Due Date</th>
+                    <th mat-sort-header="amount">Amount</th>
+                    <th mat-sort-header="paid">Paid Amount</th>
+                    <th mat-sort-header="balance">Balance Amount</th>
+                    <th mat-sort-header="status">Status</th>
+                    <th class="text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (data of tableData; track data) {
+                  <tr>
+                    <td>
+                      <label class="checkboxs"
+                        ><input
+                          type="checkbox"
+                          [(ngModel)]="data.isSelected" /><span
+                          class="checkmarks"
+                        ></span
+                      ></label>
+                    </td>
+                    <td>
+                      <div
+                        class="set-star rating-select"
+                        tabindex="0" 
+                        (keydown.enter)="onClickStar(data)"
+                        (click)="onClickStar(data)"
+                        [class.filled]="data.isStarActive"
+                      >
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </td>
+                    <td>
+                      <a
+                        href="javascript:void(0);"
+                        class="title-name add-popups-draft"
+                        >{{ data.invoiceId }}</a
+                      >
+                    </td>
+                    <td>
+                      <h2 class="table-avatar d-flex align-items-center">
+                        <a
+                          [routerLink]="routes.companiesDetails"
+                          class="avatar avatar-sm border me-2"
+                          ><img
+                            class="w-auto h-auto"
+                            [src]="data.img"
+                            alt="User Image" /></a
+                        ><a
+                          [routerLink]="routes.companiesDetails"
+                          class="profile-split d-flex flex-column"
+                          >{{ data.client }}</a
+                        >
+                      </h2>
+                    </td>
+                    <td>
+                      <h2 class="table-avatar d-flex align-items-center">
+                        <a href="javascript:void(0);" class="avatar avatar-sm border me-2"
+                          ><img
+                            class="w-auto h-auto"
+                            [src]="data.img1"
+                            alt="User Image" /></a
+                        ><a
+                          href="javascript:void(0);"
+                          class="profile-split d-flex flex-column"
+                          >{{ data.project }}</a
+                        >
+                      </h2>
+                    </td>
+                    <td>{{ data.dueDate }}</td>
+                    <td>{{ data.amount }}</td>
+                    <td>{{ data.paidAmount }}</td>
+                    <td>{{ data.balanceAmount }}</td>
+                    <td>
+                      <span
+                        class="badge badge-pill badge-status"
+                        [ngClass]="{
+                          'bg-warning': data.status === 'Partially Paid',
+                          'bg-success': data.status === 'Paid',
+                          'bg-danger': data.status === 'Unpaid',
+                          'bg-violet': data.status === 'Overdue'
+                        }"
+                        >{{ data.status }}</span
+                      >
+                    </td>
+                    <td>
+                      <div class="dropdown table-action">
+                        <a
+                          href="javascript:void(0);"
+                          class="action-icon"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                          ><i class="fa fa-ellipsis-v"></i
+                        ></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a
+                            class="dropdown-item"
+                            href="javascript:void(0);"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvas_edit"
+                            ><i class="ti ti-edit text-blue"></i> Edit</a
+                          ><a
+                            class="dropdown-item"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_invoices"
+                            ><i class="ti ti-trash text-danger"></i> Delete</a
+                          ><a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="ti ti-clipboard-copy text-green"></i>
+                            View Invoices</a
+                          ><a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="ti ti-checks text-success"></i> Mark as
+                            Paid</a
+                          ><a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="ti ti-file text-tertiary"></i> Mark as
+                            Partially Paid</a
+                          ><a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="ti ti-sticker text-blue"></i> Mark ad
+                            Unpaid</a
+                          ><a class="dropdown-item" href="javascript:void(0);"
+                            ><i class="ti ti-printer text-info"></i> Print</a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+            <app-custom-pagination></app-custom-pagination>
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="datatable-length"></div>
+              </div>
+              <div class="col-md-6">
+                <div class="datatable-paginate"></div>
+              </div>
+            </div>
+            <!-- /Projects List -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Page Wrapper -->
+<!-- Add New Invoices -->
+<div
+  class="offcanvas offcanvas-end offcanvas-large"
+  tabindex="-1"
+  id="offcanvas_add"
+>
+  <div class="offcanvas-header border-bottom">
+    <h4>Add New Invoice</h4>
+    <button
+      type="button"
+      class="btn-close custom-btn-close border p-1 me-0 d-flex align-items-center justify-content-center rounded-circle"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    >
+      <i class="ti ti-x"></i>
+    </button>
+  </div>
+
+  <div class="offcanvas-body">
+    <form>
+      <div>
+        <div class="row">
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <label class="col-form-label" for="reason">Client</label>
+              <a
+                href="javascript:void(0);"
+                class="label-add"
+                data-bs-toggle="modal"
+                data-bs-target="#add_deal"
+                ><i class="ti ti-square-rounded-plus"></i>Add New</a
+              >
+            </div>
+            <mat-select class="select2 custom-mat-select" placeholder="Choose">
+              <mat-option value="choose">Choose</mat-option>
+              <mat-option value="novawave">NovaWave LLC</mat-option>
+              <mat-option value="bluesky">BlueSky Industrie</mat-option>
+              <mat-option value="asilver">ASilver Hawkdams</mat-option>
+            </mat-select>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Bill To<span class="text-danger"> *</span></label
+              >
+              <input class="form-control" type="text" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Ship To<span class="text-danger"> *</span></label
+              >
+              <input class="form-control" type="text" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <label class="col-form-label" for="reason">Project</label>
+              <a
+                href="javascript:void(0);"
+                class="label-add"
+                data-bs-toggle="modal"
+                data-bs-target="#add_deal"
+                ><i class="ti ti-square-rounded-plus"></i>Add New</a
+              >
+            </div>
+            <mat-select class="select2 custom-mat-select" placeholder="Choose">
+              <mat-option value="choose">Choose</mat-option>
+              <mat-option value="novawave">Truelysell</mat-option>
+              <mat-option value="bluesky">Dreamschat</mat-option>
+              <mat-option value="asilver">Servbook</mat-option>
+            </mat-select>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Amount<span class="text-danger"> *</span></label
+              >
+              <input class="form-control" type="text" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label" for="reason">Currency</label>
+              <p-dropdown
+                [options]="selectedValue1"
+                [(ngModel)]="selectedDatas1"
+                [ngModelOptions]="{ standalone: true }"
+                optionLabel="name"
+                [filter]="true"
+                filterBy="name"
+                [showClear]="true"
+                placeholder="Choose"
+              >
+                <ng-template pTemplate="selectedItem" let-selectedOption>
+                  <div class="flex align-items-center gap-2">
+                    <div>{{ selectedOption.name }}</div>
+                  </div>
+                </ng-template>
+                <ng-template let-data1 pTemplate="item">
+                  <div class="flex align-items-center gap-2">
+                    <div>{{ data1.name }}</div>
+                  </div>
+                </ng-template>
+              </p-dropdown>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Invoice Date <span class="text-danger">*</span></label
+              >
+              <div class="icon-form">
+                <span class="form-icon"
+                  ><i class="ti ti-calendar-check"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control datetimepicker"
+                  placeholder=""
+                  bsDatepicker
+                  [bsConfig]="{ adaptivePosition: true }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Due Date<span class="text-danger">*</span></label
+              >
+              <div class="icon-form">
+                <span class="form-icon"
+                  ><i class="ti ti-calendar-check"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control datetimepicker"
+                  placeholder=""
+                  bsDatepicker
+                  [bsConfig]="{ adaptivePosition: true }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label" for="reason">Payment Method</label>
+              <mat-select
+                class="select2 custom-mat-select"
+                placeholder="Choose"
+              >
+                <mat-option value="choose">Credit</mat-option>
+                <mat-option value="novawave">Debit</mat-option>
+                <mat-option value="bluesky">PayPal</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label" for="reason">Status</label>
+              <mat-select
+                class="select2 custom-mat-select"
+                placeholder="Choose"
+              >
+                <mat-option value="choose">Choose</mat-option>
+                <mat-option value="novawave">Active</mat-option>
+                <mat-option value="bluesky">Inactive</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Description <span class="text-danger">*</span></label
+              >
+              <div class="summernote">
+                <p-editor
+                  [(ngModel)]="text"
+                  [ngModelOptions]="{ standalone: true }"
+                  [style]="{ height: '100px' }"
+                ></p-editor>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <label class="col-form-label" for="reason">Project</label>
+              <a
+                href="javascript:void(0);"
+                class="label-add"
+                data-bs-toggle="modal"
+                data-bs-target="#add_deal"
+                ><i class="ti ti-square-rounded-plus"></i>Add New</a
+              >
+            </div>
+            <mat-select class="select2 custom-mat-select" placeholder="Choose">
+              <mat-option value="choose">Choose</mat-option>
+              <mat-option value="novawave">NovaWave LLC</mat-option>
+              <mat-option value="bluesky">BlueSky Industries</mat-option>
+              <mat-option value="bluesky">ASilver Hawkdams</mat-option>
+            </mat-select>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-view">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Discount</th>
+                  <th>Amount</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="input-table input-table-descripition">
+                      <input type="text" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <input type="text" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <input type="text" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <select>
+                        <option>%</option>
+                        <option>5%</option>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <input type="text" />
+                    </div>
+                  </td>
+                  <td>
+                    <a href="javascript:void(0);" class="btn btn-success-light">
+                      <i class="ti ti-check"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="subtotal-div mb-3">
+            <ul class="mb-3">
+              <li>
+                <h5>Subtotal</h5>
+                <h6>$0.00</h6>
+              </li>
+              <li>
+                <h5>Discount 2%</h5>
+                <h6>$0.00</h6>
+              </li>
+              <li>
+                <h5>Extra Discount 0%</h5>
+                <h6>$0.00</h6>
+              </li>
+              <li>
+                <h5>Tax</h5>
+                <h6>$0.00</h6>
+              </li>
+              <li>
+                <h5>Total</h5>
+                <h6>$0.00</h6>
+              </li>
+            </ul>
+            <div class="row">
+              <div class="mb-3">
+                <label class="col-form-label" for="reason">Signature Name</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label class="col-form-label" for="reason">Signature Image</label>
+                <div class="upload-signature">
+                  <input type="file" />
+                  <a href="javascript:void(0);">Upload Signature</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Notes<span class="text-danger"> *</span></label
+              >
+              <textarea class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Terms & Conditions<span class="text-danger"> *</span></label
+              >
+              <textarea class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-end">
+        <button
+          type="button"
+          data-bs-dismiss="offcanvas"
+          class="btn btn-light me-2"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#create_success"
+        >
+          Create
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- /Add New Project -->
+
+<!-- Edit Invoices -->
+<div
+  class="offcanvas offcanvas-end offcanvas-large"
+  tabindex="-1"
+  id="offcanvas_edit"
+>
+  <div class="offcanvas-header border-bottom">
+    <h4>Edit Invoice</h4>
+    <button
+      type="button"
+      class="btn-close custom-btn-close border p-1 me-0 d-flex align-items-center justify-content-center rounded-circle"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    >
+      <i class="ti ti-x"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <form>
+      <div>
+        <div class="row">
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <label class="col-form-label" for="reason">Client</label>
+              <a
+                href="javascript:void(0);"
+                class="label-add"
+                data-bs-toggle="modal"
+                data-bs-target="#add_deal"
+                ><i class="ti ti-square-rounded-plus"></i>Add New</a
+              >
+            </div>
+            <mat-select class="select2 custom-mat-select" placeholder="Select">
+              <mat-option value="choose">Choose</mat-option>
+              <mat-option value="novawave">NovaWave LLC</mat-option>
+              <mat-option value="bluesky">BlueSky Industrie</mat-option>
+              <mat-option value="asilver">ASilver Hawkdams</mat-option>
+            </mat-select>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Bill To<span class="text-danger"> *</span></label
+              >
+              <input class="form-control" type="text" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Ship To<span class="text-danger"> *</span></label
+              >
+              <input class="form-control" type="text" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <label class="col-form-label" for="reason">Project</label>
+              <a
+                href="javascript:void(0);"
+                class="label-add"
+                data-bs-toggle="modal"
+                data-bs-target="#add_deal"
+                ><i class="ti ti-square-rounded-plus"></i>Add New</a
+              >
+            </div>
+            <mat-select class="select2 custom-mat-select" placeholder="Choose">
+              <mat-option value="choose">Choose</mat-option>
+              <mat-option value="truelysell">Truelysell</mat-option>
+              <mat-option value="dreamschar">Dreamschat</mat-option>
+              <mat-option value="servebook">Servbook</mat-option>
+            </mat-select>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Amount<span class="text-danger"> *</span></label
+              >
+              <input class="form-control" type="text" value="2,15,000" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label" for="reason">Currency</label>
+
+              <p-dropdown
+                [options]="selectedValue2"
+                [(ngModel)]="selectedDatas2"
+                [ngModelOptions]="{ standalone: true }"
+                optionLabel="name"
+                [filter]="true"
+                filterBy="name"
+                [showClear]="true"
+                placeholder="Choose"
+              >
+                <ng-template pTemplate="selectedItem" let-selectedOption>
+                  <div class="flex align-items-center gap-2">
+                    <div>{{ selectedOption.name }}</div>
+                  </div>
+                </ng-template>
+                <ng-template let-data1 pTemplate="item">
+                  <div class="flex align-items-center gap-2">
+                    <div>{{ data1.name }}</div>
+                  </div>
+                </ng-template>
+              </p-dropdown>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Invoice Date <span class="text-danger">*</span></label
+              >
+              <div class="icon-form">
+                <span class="form-icon"
+                  ><i class="ti ti-calendar-check"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control datetimepicker"
+                  value="15 Oct 2023"
+                  bsDatepicker
+                  [bsConfig]="{ adaptivePosition: true }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Due Date<span class="text-danger">*</span></label
+              >
+              <div class="icon-form">
+                <span class="form-icon"
+                  ><i class="ti ti-calendar-check"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control datetimepicker"
+                  value="20 Oct 2023"
+                  bsDatepicker
+                  [bsConfig]="{ adaptivePosition: true }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label" for="reason">Payment Method</label>
+              <mat-select
+                class="select2 custom-mat-select"
+                placeholder="Select"
+              >
+              <mat-option value="choose">Credit</mat-option>
+              <mat-option value="novawave">Debit</mat-option>
+              <mat-option value="bluesky">PayPal</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="col-form-label" for="reason">Status</label>
+              <mat-select
+                class="select2 custom-mat-select"
+                placeholder="Select"
+              >
+                <mat-option value="choose">Choose</mat-option>
+                <mat-option value="truelysell">Active</mat-option>
+                <mat-option value="dreamschar">Inactive</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Description <span class="text-danger">*</span></label
+              >
+              <div class="summernote"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <label class="col-form-label" for="reason">Project</label>
+              <a
+                href="javascript:void(0);"
+                class="label-add"
+                data-bs-toggle="modal"
+                data-bs-target="#add_deal"
+                ><i class="ti ti-square-rounded-plus"></i>Add New</a
+              >
+            </div>
+            <mat-select class="select2 custom-mat-select" placeholder="Select">
+              <mat-option value="choose">Choose</mat-option>
+              <mat-option value="choose">NovaWave LLC</mat-option>
+              <mat-option value="truelysell">BlueSky Industries</mat-option>
+              <mat-option value="dreamschar">Silver Hawkdams</mat-option>
+            </mat-select>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-view">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Discount</th>
+                  <th>Amount</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="input-table input-table-descripition">
+                      <input type="text" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <input type="text" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <input type="text" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <select>
+                        <option>%</option>
+                        <option>5%</option>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <input type="text" />
+                    </div>
+                  </td>
+                  <td>
+                    <a href="javascript:void(0);" class="btn btn-success-light">
+                      <i class="ti ti-check"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-view">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Discount</th>
+                  <th>Amount</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="input-table input-table-descripition">
+                      <input type="text" value="Web Design" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <input type="text" value="1" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <input type="text" value="$200" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <select>
+                        <option>2%</option>
+                        <option>5%</option>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-table">
+                      <input type="text" value="$196" />
+                    </div>
+                  </td>
+                  <td>
+                    <a href="javascript:void(0);" class="btn btn-danger-light">
+                      <i class="ti ti-x"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="subtotal-div mb-3">
+            <ul class="mb-3">
+              <li>
+                <h5>Subtotal</h5>
+                <h6>$196.00</h6>
+              </li>
+              <li>
+                <h5>Discount 2%</h5>
+                <h6>$4.00</h6>
+              </li>
+              <li>
+                <h5>Extra Discount 0%</h5>
+                <h6>$0.00</h6>
+              </li>
+              <li>
+                <h5>Tax</h5>
+                <h6>$0.00</h6>
+              </li>
+              <li>
+                <h5>Total</h5>
+                <h6>$192.00</h6>
+              </li>
+            </ul>
+            <div class="row">
+              <div class="mb-3">
+                <label class="col-form-label" for="reason">Signature Name</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="mb-0">
+                <label class="col-form-label" for="reason">Signature Image</label>
+                <div class="upload-signature">
+                  <input type="file" />
+                  <a href="javascript:void(0);" class="text-start">
+                    <img src="assets/img/signature.png" alt="img" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Notes<span class="text-danger"> *</span></label
+              >
+              <textarea class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="mb-3">
+              <label class="col-form-label"
+      for="subject"          >Terms & Conditions<span class="text-danger"> *</span></label
+              >
+              <textarea class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-end">
+        <button
+          type="button"
+          data-bs-dismiss="offcanvas"
+          class="btn btn-light me-2"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#create_success"
+        >
+          Create
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- /Edit Invoices -->
+
+<!-- Delete Invoices -->
+<div class="modal fade" id="delete_invoices" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="text-center">
+          <div class="avatar avatar-xl bg-danger-light rounded-circle mb-3">
+            <i class="ti ti-trash-x fs-36 text-danger"></i>
+          </div>
+          <h4 class="mb-2">Remove Invoice?</h4>
+          <p class="mb-0">
+            Are you sure you want to remove <br />
+            invoice you selected.
+          </p>
+          <div class="d-flex align-items-center justify-content-center mt-4">
+            <a href="javascript:void(0);" class="btn btn-light me-2" data-bs-dismiss="modal"
+              >Cancel</a
+            >
+            <a [routerLink]="routes.invoiceList" class="btn btn-danger">Yes, Delete it</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Delete Invoices -->
+
+<!-- Create Invoices -->
+<div class="modal custom-modal fade" id="create_invoices" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 m-0 justify-content-end">
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="success-message text-center">
+          <div class="success-popup-icon bg-light-blue">
+            <i class="ti ti-atom-2"></i>
+          </div>
+          <h3>Invoices Created Successfully!!!</h3>
+          <p>View the details of invoices, created</p>
+          <div class="col-lg-12 text-center modal-btn">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-light"
+              data-bs-dismiss="modal"
+              >Cancel</a
+            >
+            <a href="javascript:void(0);" class="btn btn-primary"
+              >View Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Create Project -->
+
+<!-- Add New View -->
+<div class="modal custom-modal fade" id="add_deal" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add</h5>
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="col-form-label" for="name">Name</label>
+            <input type="text" class="form-control" placeholder="Enter Name" />
+          </div>
+          <div class="modal-btn text-end">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-light"
+              data-bs-dismiss="modal"
+              >Cancel</a
+            >
+            <button type="submit" class="btn btn-danger">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Add New View -->

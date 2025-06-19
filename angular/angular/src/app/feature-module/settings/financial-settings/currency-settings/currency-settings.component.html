@@ -1,0 +1,447 @@
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h4 class="page-title">Settings</h4>
+            </div>
+            <div class="col-4 text-end">
+              <div class="head-icons">
+                <a [routerLink] = "routes.currencySettings" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-original-title="Refresh" matTooltip="Refresh"><i class="ti ti-refresh-dot"></i></a>
+                <app-collapse-header></app-collapse-header>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Settings Menu -->
+        <div class="card">
+          <div class="card-body pb-0 pt-2">
+            <ul class="nav nav-tabs nav-tabs-bottom">
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.generalSettings" class="nav-link px-0">
+                  <i class="ti ti-settings-cog me-2"></i>General Settings
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.companySettings" class="nav-link px-0">
+                  <i class="ti ti-world-cog me-2"></i>Website Settings
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.invoiceSettings" class="nav-link px-0">
+                  <i class="ti ti-apps me-2"></i>App Settings
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.emailSettings" class="nav-link px-0">
+                  <i class="ti ti-device-laptop me-2"></i>System Settings
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.paymentGatewaySettings" class="nav-link px-0 active">
+                  <i class="ti ti-moneybag me-2"></i>Financial Settings
+                </a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink] = "routes.storageSettings" class="nav-link px-0">
+                  <i class="ti ti-flag-cog me-2"></i>Other Settings
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /Settings Menu -->
+
+
+        <div class="row">
+          <div class="col-xl-3 col-lg-12 theiaStickySidebar">
+            <div class="stickybar">
+              <!-- Settings Sidebar -->
+              <div class="card">
+                <div class="card-body">
+                  <div class="settings-sidebar">
+                    <h4>Financial Settings</h4>
+                    <ul>
+                      <li>
+                        <a [routerLink] = "routes.paymentGatewaySettings">Payment Gateways</a>
+                      </li>
+                      <li>
+                        <a [routerLink] = "routes.bankAccounts">Bank Accounts</a>
+                      </li>
+                      <li>
+                        <a [routerLink] = "routes.taxRates">Tax Rates</a>
+                      </li>
+                      <li>
+                        <a [routerLink] = "routes.currencySettings" class="active">Currencies</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Settings Sidebar -->
+            </div>
+          </div>
+
+          <div class="col-xl-9 col-lg-12">
+
+           <!-- Currencies -->
+								<div class="card">
+									<div class="card-body">
+										<div class="d-flex align-items-center justify-content-between mb-4">
+											<h4>Currencies</h4>
+											<a href="javascript:void(0)" class="btn btn-sm btn-icon border rounded" data-bs-toggle="modal" data-bs-target="#add_currency" ><i class="ti ti-plus"></i></a>
+										</div>
+
+										<form action="currencies.html">
+											<!-- Euro -->
+											<div class="d-flex align-items-center justify-content-between flex-wrap border-bottom mb-3 pb-3 row-gap-2">
+												<div>
+													<h5 class="mb-1 fw-semibold">Euro</h5>
+													<p>Shows the details of Euro currency</p>
+												</div>
+												<div class="dropdown table-action">
+													<a href="javascript:void(0);" class="action-icon bg-white" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_currency"><i class="fa-solid fa-pencil text-blue"></i> Edit</a>
+														<a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_currency"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a>
+													</div>
+												</div>
+											</div>
+											<div class="border-bottom mb-3">
+												<div class="row">
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="name">
+																Currency Name
+															</label>
+															<input type="text" class="form-control" value="Euro">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="code">
+																Code
+															</label>
+															<input type="text" class="form-control" value="EUR">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="symbol">
+																Symbol
+															</label>
+															<input type="text" class="form-control" value="€">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="exchange">
+																Exchange Rate
+															</label>
+															<input type="text" class="form-control" value="Default">
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /Euro -->
+
+											<!-- England Pound -->
+											<div class="d-flex align-items-center justify-content-between flex-wrap mb-3 pb-3 border-bottom row-gap-2">
+												<div>
+													<h5 class="fw-semibold mb-1">England Pound</h5>
+													<p>Shows the details of England Pound currency</p>
+												</div>
+												<div class="dropdown table-action">
+													<a href="javascript:void(0);" class="action-icon bg-white" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_currency"><i class="fa-solid fa-pencil text-blue"></i> Edit</a>
+														<a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_currency"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a>
+													</div>
+												</div>
+											</div>
+											<div class="mb-3 border-bottom">
+												<div class="row">
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="Currency">
+																Currency Name
+															</label>
+															<input type="text" class="form-control" value="England Pound">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="code">
+																Code
+															</label>
+															<input type="text" class="form-control" value="GBP">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="symbol">
+																Symbol
+															</label>
+															<input type="text" class="form-control" value="€">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="exchange">
+																Exchange Rate
+															</label>
+															<input type="text" class="form-control" value="Default">
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /England Pound -->
+
+											<!-- Indian Rupee -->
+											<div class="d-flex align-items-center justify-content-between flex-wrap mb-3 pb-3 border-bottom row-gap-2">
+												<div>
+													<h5 class="fw-semibold mb-1">Indian Rupee</h5>
+													<p>Shows the details of Indian Rupee currency</p>
+												</div>
+												<div class="dropdown table-action">
+													<a href="javascript:void(0);" class="action-icon bg-white" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_currency"><i class="fa-solid fa-pencil text-blue"></i> Edit</a>
+														<a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_currency"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a>
+													</div>
+												</div>
+											</div>
+											<div class="border-bottom mb-3">
+												<div class="row">
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="name">
+																Currency Name
+															</label>
+															<input type="text" class="form-control" value="Indian Rupee">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="code">
+																Code
+															</label>
+															<input type="text" class="form-control" value="INR">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="Symbol">
+																Symbol
+															</label>
+															<input type="text" class="form-control" value="₹">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="Exchange">
+																Exchange Rate
+															</label>
+															<input type="text" class="form-control" value="83.11">
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /Indian Rupee -->
+
+											<!-- US Dollar -->
+											<div class="d-flex align-items-center justify-content-between flex-wrap mb-3 pb-3 border-bottom row-gap-2">
+												<div>
+													<h5 class="fw-semibold mb-1">US Dollar</h5>
+													<p>Shows the details of US Dollar currency</p>
+												</div>
+												<div class="dropdown table-action">
+													<a href="javascript:void(0);" class="action-icon bg-white" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#edit_currency"><i class="fa-solid fa-pencil text-blue"></i> Edit</a>
+														<a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_currency"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="row">
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="Currency">
+																Currency Name
+															</label>
+															<input type="text" class="form-control" value="US Dollar">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="Code">
+																Code
+															</label>
+															<input type="text" class="form-control" value="USD">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label" for="Symbol">
+																Symbol
+															</label>
+															<input type="text" class="form-control" value="$">
+														</div>
+													</div>
+													<div class="col-md-3 col-sm-6">
+														<div class="mb-3">
+															<label class="col-form-label"  for="Exchange">
+																Exchange Rate
+															</label>
+															<input type="text" class="form-control" value="Default">
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /US Dollar -->
+
+											<div class="d-flex align-items-center">
+												<a href="javascript:void(0);" class="btn btn-light me-2">Cancel</a>
+												<button type="submit" class="btn btn-primary">Save Changes</button>
+											</div>
+
+										</form>
+
+									</div>
+								</div>
+								<!-- /Currencies -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Page Wrapper -->
+
+<!-- Add Currency -->
+<div class="modal custom-modal fade" id="add_currency" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Currency</h5>
+        <div class="d-flex align-items-center mod-toggle">
+          <div class="status-toggle">
+            <input type="checkbox" id="toggle" class="check" checked="">
+            <label for="toggle" class="checktoggle"></label>
+          </div>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="ti ti-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-wrap">
+            <label class="col-form-label" for="Currency">Currency Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-wrap">
+            <label class="col-form-label"  for="Code">Code <span class="text-danger">*</span></label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-wrap">
+            <label class="col-form-label" for="Symbol">Symbol <span class="text-danger">*</span></label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-wrap">
+            <label class="col-form-label" for="Exchange">Exchange Rate <span class="text-danger">*</span></label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="modal-btn">
+            <a href="javascript:void(0);" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Add Currency -->
+
+<!-- Edit Currency -->
+<div class="modal custom-modal fade" id="edit_currency" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Tax Rate</h5>
+        <div class="d-flex align-items-center mod-toggle">
+          <div class="status-toggle">
+            <input type="checkbox" id="toggle1" class="check" checked="">
+            <label for="toggle1" class="checktoggle"></label>
+          </div>
+          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="ti ti-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-wrap">
+            <label class="col-form-label" for="Currency">Currency Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" value="Euro">
+          </div>
+          <div class="form-wrap">
+            <label class="col-form-label" for="Code">Code <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" value="EUR">
+          </div>
+          <div class="form-wrap">
+            <label class="col-form-label" for="Symbol">Symbol <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" value="€">
+          </div>
+          <div class="form-wrap">
+            <label class="col-form-label" for="Exchange">Exchange Rate <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" value="Default">
+          </div>
+          <div class="modal-btn">
+            <a href="javascript:void(0);" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Edit Currency -->
+
+<!-- Delete Account -->
+<div class="modal custom-modal fade" id="delete_currency" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 m-0 justify-content-end">
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="success-message text-center">
+          <div class="success-popup-icon">
+            <i class="ti ti-trash-x"></i>
+          </div>
+          <h3>Remove Currency?</h3>
+          <p class="del-info">Are you sure you want to remove it.</p>
+          <div class="col-lg-12 text-center modal-btn">
+            <a href="javascript:void(0);" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+            <a [routerLink] = "routes.currencySettings" class="btn btn-danger">Yes, Delete it</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Delete Account -->

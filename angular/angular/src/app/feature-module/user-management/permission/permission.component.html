@@ -1,0 +1,135 @@
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+    <div class="content">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h4 class="page-title">Permission</h4>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="head-icons">
+                                <a [routerLink]="routes.permissions" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Refresh"><i class="ti ti-refresh-dot"></i></a>
+                                <a href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Collapse" id="collapse-header"><i class="ti ti-chevrons-up"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Header -->
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <!-- Search -->
+                        <div class="search-section">
+                            <div class="row">
+                                <div class="col-md-5 col-sm-4">
+                                    <div class="role-name">
+                                        <h4>Role Name : <span class="text-danger">Admin</span></h4>
+                                    </div>						
+                                </div>		
+                                <div class="col-md-7 col-sm-8">					
+                                    <div class="export-list text-sm-end">
+                                        <ul>
+                                            <li>
+                                                <label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span>Allow All Modules</label>
+                                            </li>						
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Search -->
+
+                        <!-- Roles List -->
+                        <div class="table-responsive custom-table">
+                            <div id="permission_list_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row dt-row"><div class="col-sm-12 table-responsive"><table class="table dataTable no-footer" id="permission_list" style="width: 923px;">
+                                <thead class="thead-light">
+                                    <tr><th class="no-sort sorting sorting_asc" tabindex="0" aria-controls="permission_list" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                                            
+                                                
+                                            
+                                        : activate to sort column descending" style="width: 48px;">
+                                            <label class="checkboxs">
+                                                <input type="checkbox" id="select-all"><span class="checkmarks"></span>
+                                            </label>
+                                        </th><th class="sorting" tabindex="0" aria-controls="permission_list" rowspan="1" colspan="1" aria-label="Modules: activate to sort column ascending" style="width: 94px;">Modules</th><th class="sorting" tabindex="0" aria-controls="permission_list" rowspan="1" colspan="1" aria-label="Sub Modules: activate to sort column ascending" style="width: 132px;">Sub Modules</th><th class="sorting" tabindex="0" aria-controls="permission_list" rowspan="1" colspan="1" aria-label="Create: activate to sort column ascending" style="width: 74px;">Create</th><th class="sorting" tabindex="0" aria-controls="permission_list" rowspan="1" colspan="1" aria-label="Edit: activate to sort column ascending" style="width: 49px;">Edit</th><th class="sorting" tabindex="0" aria-controls="permission_list" rowspan="1" colspan="1" aria-label="View: activate to sort column ascending" style="width: 57px;">View</th><th class="sorting" tabindex="0" aria-controls="permission_list" rowspan="1" colspan="1" aria-label="Delete: activate to sort column ascending" style="width: 73px;">Delete</th><th class="sorting" tabindex="0" aria-controls="permission_list" rowspan="1" colspan="1" aria-label="Allow All: activate to sort column ascending" style="width: 92px;">Allow All</th></tr>
+                                </thead>
+                                <tbody>
+
+                                <tr class="odd"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Dashboard</td><td>Dashboard</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr><tr class="even"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Contacts</td><td>Contacts</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr><tr class="odd"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Companies</td><td>Companies</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr><tr class="even"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Leads</td><td>Leads</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr><tr class="odd"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Deals</td><td>Deals</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr><tr class="even"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Pipelines</td><td>Pipelines</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr><tr class="odd"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Compaign</td><td>Compaign</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr><tr class="even"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Projects</td><td>Projects</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr><tr class="odd"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Tasks</td><td>Tasks</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr><tr class="even"><td class="sorting_1"><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td>Activity</td><td>Activity</td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td><td><label class="checkboxs"><input type="checkbox"><span class="checkmarks"></span></label></td></tr></tbody>
+                            </table></div></div><div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7"></div></div></div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="datatable-length"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="datatable-paginate"></div>
+                            </div>
+                        </div>
+                        <!-- /Roles List -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /Page Wrapper -->
+
+<div class="modal custom-modal fade" id="add_role" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Role</h5>
+                <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">	
+                    <i class="ti ti-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form >
+                    <div class="form-wrap">
+                        <label class="col-form-label" for="role">Role Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="modal-btn">
+                        <a href="javascript:void(0);" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal custom-modal fade" id="edit_role" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Role</h5>
+                <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">	
+                    <i class="ti ti-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form >
+                    <div class="form-wrap">
+                        <label class="col-form-label" for="reason">Role Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" value="Admin">
+                    </div>
+                    <div class="modal-btn">
+                        <a href="javascript:void(0);" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,2430 @@
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h4 class="page-title">
+                Contacts<span class="count-title">123</span>
+              </h4>
+            </div>
+            <div class="col-4 text-end">
+              <div class="head-icons">
+                <a
+                  [routerLink]="routes.contactList"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-original-title="Refresh"
+                  matTooltip="Refresh"
+                  ><i class="ti ti-refresh-dot"></i>
+                </a>
+                <app-collapse-header></app-collapse-header>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Page Header -->
+
+        <div class="card">
+          <div class="card-header">
+            <!-- Search -->
+           <!-- Search -->
+								<div class="row align-items-center">
+									<div class="col-sm-4">
+										<div class="icon-form mb-3 mb-sm-0">
+											<span class="form-icon"><i class="ti ti-search"></i></span>
+											<input type="text" class="form-control" placeholder="Search Contacts">
+										</div>							
+									</div>		
+									<div class="col-sm-8">					
+										<div class="d-flex align-items-center flex-wrap row-gap-2 justify-content-sm-end">
+											<div class="dropdown me-2">
+												<a href="javascript:void(0);" class="dropdown-toggle"  data-bs-toggle="dropdown"><i class="ti ti-package-export me-2"></i>Export</a>
+												<div class="dropdown-menu  dropdown-menu-end">
+													<ul>
+														<li>
+															<a href="javascript:void(0);" class="dropdown-item"><i class="ti ti-file-type-pdf text-danger me-1"></i>Export as PDF</a>
+														</li>
+														<li>
+															<a href="javascript:void(0);" class="dropdown-item"><i class="ti ti-file-type-xls text-green me-1"></i>Export as Excel </a>
+														</li>
+													</ul>
+												</div>
+											</div>	
+											<a href="javascript:void(0);" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_add"><i class="ti ti-square-rounded-plus me-2"></i>Add Contacts</a>
+										</div>
+									</div>
+								</div>
+								<!-- /Search -->
+            <!-- /Search -->
+          </div>
+
+          <div class="card-body">
+            <!-- Filter -->
+            <div class="d-flex align-items-center justify-content-between flex-wrap row-gap-2 mb-4">
+							<div class="d-flex align-items-center flex-wrap row-gap-2">
+								<div class="dropdown me-2">
+									<a href="javascript:void(0);" class="dropdown-toggle"  data-bs-toggle="dropdown"><i class="ti ti-sort-ascending-2 me-2"></i>Sort </a>
+									<div class="dropdown-menu  dropdown-menu-start">
+										<ul>
+											<li>
+												<a href="javascript:void(0);" class="dropdown-item">
+													<i class="ti ti-circle-chevron-right me-1"></i>Ascending
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="dropdown-item">
+													<i class="ti ti-circle-chevron-right me-1"></i>Descending
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="dropdown-item">
+													<i class="ti ti-circle-chevron-right me-1"></i>Recently Viewed
+												</a>
+											</li>
+											<li>
+												<a href="javascript:void(0);" class="dropdown-item">
+													<i class="ti ti-circle-chevron-right me-1"></i>Recently Added
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="icon-form">
+									<span class="form-icon"><i class="ti ti-calendar"></i></span>
+                  <app-date-range-picker></app-date-range-picker>
+								</div>
+							</div>
+							<div class="d-flex align-items-center flex-wrap row-gap-2">
+								<div class="dropdown me-2">
+									<a href="javascript:void(0);" class="btn bg-soft-purple text-purple"  data-bs-toggle="dropdown"  data-bs-auto-close="outside"><i class="ti ti-columns-3 me-2"></i>Manage Columns</a>
+									<div class="dropdown-menu  dropdown-menu-md-end dropdown-md p-3">
+										<h4 class="mb-2 fw-semibold">Want to manage datatables?</h4>
+										<p class="mb-3">Please drag and drop your column to reorder your table and enable see option as you want.</p>
+										<div class="border-top pt-3">
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Name</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-name" class="check">
+													<label for="col-name" class="checktoggle"></label>
+												</div>
+											</div>
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Phone</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-phone" class="check">
+													<label for="col-phone" class="checktoggle"></label>
+												</div>
+											</div>
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Email</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-email" class="check">
+													<label for="col-email" class="checktoggle"></label>
+												</div>
+											</div>
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Tags</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-tag" class="check">
+													<label for="col-tag" class="checktoggle"></label>
+												</div>
+											</div>
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Location</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-loc" class="check">
+													<label for="col-loc" class="checktoggle"></label>
+												</div>
+											</div>
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Rating</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-rate" class="check">
+													<label for="col-rate" class="checktoggle"></label>
+												</div>
+											</div>
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Owner</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-owner" class="check">
+													<label for="col-owner" class="checktoggle"></label>
+												</div>
+											</div>
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Contact</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-contact" class="check" checked="">
+													<label for="col-contact" class="checktoggle"></label>
+												</div>
+											</div>
+											<div class="d-flex align-items-center justify-content-between mb-3">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Status</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-status" class="check">
+													<label for="col-status" class="checktoggle"></label>
+												</div>
+											</div>
+											<div class="d-flex align-items-center justify-content-between">
+												<p class="mb-0 d-flex align-items-center"><i class="ti ti-grip-vertical me-2"></i>Action</p>
+												<div class="status-toggle">
+													<input type="checkbox" id="col-action" class="check">
+													<label for="col-action" class="checktoggle"></label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-sorts dropdown me-2">
+									<a href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside"><i class="ti ti-filter-share"></i>Filter</a>
+									<div class="filter-dropdown-menu dropdown-menu  dropdown-menu-md-end p-3">
+										<div class="filter-set-view">
+											<div class="filter-set-head">
+												<h4><i class="ti ti-filter-share"></i>Filter</h4>
+											</div>
+											<div class="accordion" id="accordionExample">
+												<div class="filter-set-content">
+													<div class="filter-set-content-head">
+														<a href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Country</a>
+													</div>
+													<div class="filter-set-contents accordion-collapse collapse show" id="collapseTwo" data-bs-parent="#accordionExample">
+														<div class="filter-content-list">
+															<div class="form-wrap icon-form">
+																<span class="form-icon"><i class="ti ti-search"></i></span>
+																<input type="text" class="form-control" placeholder="Search Country">
+															</div>
+															<ul>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			India
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			USA
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			France
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			United Kingdom
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			UAE
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Italy
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Japan
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Germany
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="filter-set-content">
+													<div class="filter-set-content-head">
+														<a href="javascript:void(0);" class="collapsed" data-bs-toggle="collapse" data-bs-target="#owner" aria-expanded="false" aria-controls="owner">Owner</a>
+													</div>
+													<div class="filter-set-contents accordion-collapse collapse" id="owner" data-bs-parent="#accordionExample">
+														<div class="filter-content-list">
+															<div class="form-wrap icon-form">
+																<span class="form-icon"><i class="ti ti-search"></i></span>
+																<input type="text" class="form-control" placeholder="Search Owner">
+															</div>
+															<ul>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox" checked="">
+																			<span class="checkmarks"></span>
+																			Hendry
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Guillory
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Jami
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Theresa
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Espinosa
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="filter-set-content">
+													<div class="filter-set-content-head">
+														<a href="javascript:void(0);" class="collapsed" data-bs-toggle="collapse" data-bs-target="#Status" aria-expanded="false" aria-controls="Status">Status</a>
+													</div>
+													<div class="filter-set-contents accordion-collapse collapse" id="Status" data-bs-parent="#accordionExample">
+														<div class="filter-content-list">
+															<ul>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox" checked="">
+																			<span class="checkmarks"></span>
+																			Active
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Inactive
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="filter-set-content">
+													<div class="filter-set-content-head">
+														<a href="javascript:void(0);" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Rating</a>
+													</div>
+													<div class="filter-set-contents accordion-collapse collapse" id="collapseOne" data-bs-parent="#accordionExample">
+														<div class="filter-content-list">
+															<ul>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox" checked="">
+																			<span class="checkmarks"></span>
+																			<span class="rating">
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<span>5.0</span>
+																			</span>
+																		</label>
+																	</div>
+																	
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			<span class="rating">
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star"></i>
+																				<span>4.0</span>
+																			</span>
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			<span class="rating">
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<span>3.0</span>
+																			</span>
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>																																				
+																			<span class="rating">
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<span>2.0</span>
+																			</span>
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			<span class="rating">
+																				<i class="fa fa-star filled"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<i class="fa fa-star"></i>
+																				<span>1.0</span>
+																			</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="filter-set-content">
+													<div class="filter-set-content-head">
+														<a href="javascript:void(0);" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Tags</a>
+													</div>
+													<div class="filter-set-contents accordion-collapse collapse" id="collapseThree" data-bs-parent="#accordionExample">
+														<div class="filter-content-list">
+															<ul>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox" checked="">
+																			<span class="checkmarks"></span>
+																			Promotion
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Rated
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Rejected
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Collab
+																		</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="filter-checks">
+																		<label class="checkboxs">
+																			<input type="checkbox">
+																			<span class="checkmarks"></span>
+																			Calls
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>													
+											<div class="filter-reset-btns">
+												<div class="row">
+													<div class="col-6">
+														<a href="javascript:void(0);" class="btn btn-light">Reset</a>
+													</div>
+													<div class="col-6">
+														<a [routerLink]="routes.contactList"class="btn btn-primary">Filter</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="view-icons">
+									<a [routerLink]="routes.contactList"class="active"><i class="ti ti-list-tree"></i></a>
+									<a [routerLink]="routes.contactGrid"><i class="ti ti-grid-dots"></i></a>
+								</div>
+							</div>
+						</div>
+            <!-- /Filter -->
+
+            <!-- Contact List -->
+            <div class="table-responsive custom-table">
+              <table
+                class="table"
+                id="categorieslist"
+                matSort
+                (matSortChange)="sortData($event)"
+              >
+                <thead class="thead-light">
+                  <tr>
+                    <th class="no-sort">
+                       <label class="checkboxs" (click)="selectAll(initChecked)"  (keydown.enter)="selectAll(initChecked)" tabindex="0">
+                        <input type="checkbox" [(ngModel)]="initChecked" /><span
+                          class="checkmarks"
+                        ></span
+                      ></label>
+                    </th>
+                    <th class="no-sort"></th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Tags</th>
+                    <th>Location</th>
+                    <th>Rating</th>
+                    <th>Owner</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                    <th class="text-end">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (data of tableData; track data) {
+                  <tr class="odd">
+                    <td class="sorting_1">
+                      <label class="checkboxs"
+                        ><input
+                          type="checkbox"
+                          [(ngModel)]="data.isSelected" /><span
+                          class="checkmarks"
+                        ></span
+                      ></label>
+                    </td>
+                    <td>
+                      <div
+                      class="set-star rating-select"  tabindex="0" 
+                      (keydown.enter)="onClickStar(data)"
+                      (click)="onClickStar(data)"
+                      [class.filled]="data.isStarActive"
+                    >
+                      <i class="fa fa-star"></i>
+                    </div>
+
+                    </td>
+                    <td>
+                      <h2 class="table-avatar d-flex align-items-center">
+                        <a [routerLink]="routes.contactDetails" class="avatar avatar-sm me-2"
+                          ><img
+                            class="avatar-img"
+                            [src]="data.customer_image"
+                            alt="User Image" /></a
+                        ><a
+                          [routerLink]="routes.contactDetails"
+                          class="profile-split d-flex flex-column"
+                          >{{ data.customer_name }}
+                          <span>{{ data.customer_no }} </span></a
+                        >
+                      </h2>
+                    </td>
+                    <td>{{ data.phone }}</td>
+                    <td>{{ data.email }}</td>
+                    <td>
+                      <span
+                        class="badge badge-tag"
+                        [ngClass]="{
+                          'badge-warning-light': data.rate === 'Rated',
+                          'badge-purple-light': data.rate === 'Promotion'
+                        }"
+                      >
+                        {{ data.rate }}
+                      </span>
+                    </td>
+                    <td>{{ data.location }}</td>
+                    <td>
+                      <div class="set-star">
+                        <span
+                          ><i class="fa fa-star filled"></i> {{ data.rating }}
+                        </span>
+                      </div>
+                    </td>
+                    <td>{{ data.owner }}</td>
+                    <td>
+                      <ul class="social-links d-flex align-items-center">
+                        <li>
+                          <a href="javascript:void(0);"
+                            ><i class="ti ti-mail"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);"
+                            ><i class="ti ti-phone-check"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);"
+                            ><i class="ti ti-message-circle-share"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);"
+                            ><i class="ti ti-brand-skype"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="javascript:void(0);"
+                            ><i class="ti ti-brand-facebook"></i
+                          ></a>
+                        </li>
+                      </ul>
+                    </td>
+                    <td>
+                      <span
+                        class="badge badge-pill"
+                        [ngClass]="{
+                          'badge-status bg-success': data.status === 'Active',
+                          'badge-status bg-danger': data.status === 'Inactive'
+                        }"
+                        >{{ data.status }}</span
+                      >
+                    </td>
+                    <td>
+                      <div class="dropdown table-action">
+                        <a
+                          href="javascript:void(0);"
+                          class="action-icon"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                          ><i class="fa fa-ellipsis-v"></i
+                        ></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_edit"><i class="ti ti-edit text-blue"></i> Edit</a><a
+                            class="dropdown-item"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_contact"
+                            ><i class="ti ti-trash text-danger"></i> Delete</a
+                          ><a
+                            class="dropdown-item"
+                            [routerLink]="routes.contactDetails"
+                            ><i class="ti ti-eye text-blue-light"></i>
+                            Preview</a
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+            <app-custom-pagination></app-custom-pagination>
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="datatable-length"></div>
+              </div>
+              <div class="col-md-6">
+                <div class="datatable-paginate"></div>
+              </div>
+            </div>
+            <!-- /Contact List -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Page Wrapper -->
+
+<!-- Add Contact -->
+<div
+class="offcanvas offcanvas-end offcanvas-large" tabindex="-1" id="offcanvas_add"
+>
+<div class="offcanvas-header border-bottom">
+  <h5 class="fw-semibold">Add New Contact</h5>
+  <button type="button" class="btn-close custom-btn-close border p-1 me-0 d-flex align-items-center justify-content-center rounded-circle" data-bs-dismiss="offcanvas" aria-label="Close">
+    <i class="ti ti-x"></i>
+  </button>
+</div>
+    
+    <div class="offcanvas-body">
+      
+        <form >
+          <div class="accordion" id="main_accordion">
+            <!-- Basic Info -->
+            <div class="accordion-item rounded mb-3">
+              <div class="accordion-header">
+								<a href="javascript:void(0);" class="accordion-button accordion-custom-button bg-white rounded fw-medium text-dark" data-bs-toggle="collapse" data-bs-target="#basic">
+									<span class="avatar avatar-md rounded text-dark border me-2"><i class="ti ti-user-plus fs-20"></i></span>
+									Basic Info
+								</a>
+							</div>		
+              <div
+                class="accordion-collapse collapse show"
+                id="basic"
+                data-bs-parent="#main_accordion"
+              >
+                <div class="accordion-body border-top">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <div class="profile-upload">
+                          <div class="profile-upload-img">
+                            <span><i class="ti ti-photo"></i></span>
+                            <img src="assets/img/profiles/avatar-20.jpg" alt="img" class="preview1">
+                            <button type="button" class="profile-remove">
+															<i class="ti ti-x"></i>
+														</button>
+                          </div>
+                          <div class="profile-upload-content">
+                            <label class="profile-upload-btn">
+                              <i class="ti ti-file-broken"></i> Upload File
+                              <input type="file" class="input-img" />
+                            </label>
+                            <p>JPG, GIF or PNG. Max size of 800K</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >First Name <span class="text-danger">*</span></label
+                        >
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Last Name <span class="text-danger">*</span></label
+                        >
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Job Title <span class="text-danger">*</span></label
+                        >
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Company Name</label>
+                        <mat-select
+                          class="select2 custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="NovaWave LLC"
+                            >NovaWave LLC</mat-option
+                          >
+                          <mat-option value="BlueSky Industries"
+                            >BlueSky Industries</mat-option
+                          >
+                          <mat-option value="SilverHawk">SilverHawk</mat-option>
+                          <mat-option value="SummitPeak">SummitPeak</mat-option>
+                          <mat-option value="RiverStone Ventur"
+                            >RiverStone Ventur</mat-option
+                          >
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
+                           <label class="col-form-label"
+          for="email"                  >Email <span class="text-danger">*</span></label
+                          >
+                          <div
+                            class="status-toggle small-toggle-btn d-flex align-items-center"
+                          >
+                            <span class="me-2 label-text">Email Opt Out</span>
+                            <input
+                              type="checkbox"
+                              id="user"
+                              class="check"
+                              checked=""
+                            />
+                            <label for="user" class="checktoggle"></label>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Phone 1 <span class="text-danger">*</span></label
+                        >
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Phone 2</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Fax</label
+                        >
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <div
+                          class="d-flex align-items-center justify-content-between"
+                        >
+                          <label class="col-form-label" for="reason">Deals</label>
+                          <a href="javascript:void(0);" class="label-add" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_add_2"><i class="ti ti-square-rounded-plus"></i>Add New</a>
+                        </div>
+                        <mat-select
+                          class="select2 custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="Collins">Collins</mat-option>
+                          <mat-option value="Konopelski">Konopelski</mat-option>
+                          <mat-option value="Adams">Adams</mat-option>
+                          <mat-option value="Schumm">Schumm</mat-option>
+                          <mat-option value="Wisozk">Wisozk</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Date of Birth</label>
+                        <div class="icon-form-end date-input1">
+                          <span class="form-icon"
+                            ><i class="ti ti-calendar-event"></i
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control datetimepicker"
+                            bsDatepicker
+                            [bsConfig]="{ adaptivePosition: true }"
+                            container=".date-input1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Reviews </label>
+                        <div class="icon-form-end">
+                          <span class="form-icon"
+                            ><i class="ti ti-star"></i
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="4.2"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Owner</label>
+                        <mat-select
+                          [(value)]="selectedOption1"
+                          class="custom-mat-select img-mat-select"
+                          placeholder="Choose Owner"
+                        >
+                          <mat-select-trigger>
+                            @if (selectedOption1) {
+                            <img
+                              [src]="selectedOption1.image"
+                              alt="{{ selectedOption1.name }}"
+                              width="24"
+                              height="24"
+                              style="margin-right: 5px"
+                            />
+                            }
+                            {{ selectedOption1 ? selectedOption1.name : "" }}
+                          </mat-select-trigger>
+                          @for (user of option1; track user) {
+                          <mat-option [value]="user">
+                            <img
+                              src="{{ user.image }}"
+                              alt="{{ user.name }}"
+                              width="24"
+                              height="24"
+                              style="margin-right: 5px"
+                            />
+                            {{ user.name }}
+                          </mat-option>
+                          }
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Tags </label>
+                        <p-chips
+                          class="input-tags form-control"
+                          [ngModelOptions]="{ standalone: true }"
+                          [(ngModel)]="values1"
+                        ></p-chips>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Source <span class="text-danger">*</span></label
+                        >
+                        <mat-select
+                          class="select2 custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="Phone Calls"
+                            >Phone Calls</mat-option
+                          >
+                          <mat-option value="Social Media"
+                            >Social Media</mat-option
+                          >
+                          <mat-option value="Referral Sites"
+                            >Referral Sites</mat-option
+                          >
+                          <mat-option value="Web Analytics"
+                            >Web Analytics</mat-option
+                          >
+                          <mat-option value="Previous Purchases"
+                            >Previous Purchases</mat-option
+                          >
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Industry <span class="text-danger">*</span></label
+                        >
+                        <mat-select
+                          class="select custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="Retail Industry"
+                            >Retail Industry</mat-option
+                          >
+                          <mat-option value="Banking">Banking</mat-option>
+                          <mat-option value="Hotels">Hotels</mat-option>
+                          <mat-option value="Financial Services"
+                            >Financial Services</mat-option
+                          >
+                          <mat-option value="Insurance">Insurance</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Currency <span class="text-danger">*</span></label
+                        >
+                        <mat-select class="select custom-mat-select" placeholder="Choose">
+													<mat-option value="1">Choose</mat-option>
+													<mat-option value="1">Dollar</mat-option>
+													<mat-option value="1">Euro</mat-option>
+													<mat-option value="1">Pound</mat-option>
+													<mat-option value="1">Rupee</mat-option>
+												</mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Language <span class="text-danger">*</span></label
+                        >
+                        <mat-select
+                          class="select custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="English">English</mat-option>
+                          <mat-option value="Arabic">Arabic</mat-option>
+                          <mat-option value="German">French</mat-option>
+                          <mat-option value="German">German</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-wrap mb-0">
+                        <label class="col-form-label"
+              for="name"            >Description <span class="text-danger">*</span></label
+                        >
+                        <textarea class="form-control" rows="5"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Basic Info -->
+
+            <!-- Address Info -->
+            <div class="user-accordion-item">
+              <a
+                href="javascript:void(0);"
+                class="accordion-wrap collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#address"
+                ><span><i class="ti ti-map-pin-cog"></i></span>Address Info</a
+              >
+              <div
+                class="accordion-collapse collapse"
+                id="address"
+                data-bs-parent="#list-accord"
+              >
+                <div class="content-collapse">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Street Address </label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">City </label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">State / Province </label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-wrap mb-wrap">
+                        <label class="col-form-label" for="reason">Country</label>
+                        <mat-select
+                          class="select custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="India">India</mat-option>
+                          <mat-option value="USA">USA</mat-option>
+                          <mat-option value="France">France</mat-option>
+                          <mat-option value="UK">UK</mat-option>
+                          <mat-option value="UAE">UAE</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-wrap mb-0">
+                        <label class="col-form-label" for="reason">Zipcode </label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Address Info -->
+
+            <!-- Social Profile -->
+            <div class="user-accordion-item">
+              <a
+                href="javascript:void(0);"
+                class="accordion-wrap collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#social"
+                ><span><i class="ti ti-social"></i></span>Social Profile</a
+              >
+              <div
+                class="accordion-collapse collapse"
+                id="social"
+                data-bs-parent="#list-accord"
+              >
+                <div class="content-collapse">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Facebook</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Skype </label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Linkedin </label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Twitter</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-wrap mb-wrap">
+                        <label class="col-form-label" for="reason">Whatsapp</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-wrap mb-0">
+                        <label class="col-form-label" for="reason">Instagram</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Social Profile -->
+
+            <!-- Access -->
+            <div class="user-accordion-item">
+              <a
+                href="javascript:void(0);"
+                class="accordion-wrap collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#access"
+                ><span><i class="ti ti-accessible"></i></span>Access</a
+              >
+              <div
+                class="accordion-collapse collapse"
+                id="access"
+                data-bs-parent="#list-accord"
+              >
+                <div class="content-collapse">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="radio-wrap form-wrap">
+                        <label class="col-form-label" for="reason">Visibility</label>
+                        <div class="d-flex flex-wrap">
+                          <div class="radio-btn">
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="public"
+                              name="visible"
+                            />
+                            <label for="public">Public</label>
+                          </div>
+                          <div class="radio-btn">
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="private"
+                              name="visible"
+                            />
+                            <label for="private">Private</label>
+                          </div>
+                          <div
+                            class="radio-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#access_view"
+                          >
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="people"
+                              name="visible"
+                            />
+                            <label for="people">Select People</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="radio-wrap">
+                        <label class="col-form-label" for="reason">Status</label>
+                        <div class="d-flex flex-wrap">
+                          <div class="radio-btn">
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="active"
+                              name="status"
+                              checked=""
+                            />
+                            <label for="active">Active</label>
+                          </div>
+                          <div class="radio-btn">
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="inactive"
+                              name="status"
+                            />
+                            <label for="inactive">Inactive</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Access -->
+          </div>
+          <div class="d-flex align-items-center justify-content-end">
+						<button type="button" data-bs-dismiss="offcanvas" class="btn btn-light me-2">Cancel</button>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create_success_2">Create</button>
+					</div>
+        </form>
+      
+    </div>
+
+</div>
+<!-- /Add Contact -->
+
+<!-- Edit Contact -->
+<div
+class="offcanvas offcanvas-end offcanvas-large" tabindex="-1" id="offcanvas_edit"
+>
+ 
+<div class="offcanvas-header border-bottom">
+  <h5 class="fw-semibold">Edit New Contact</h5>
+  <button type="button" class="btn-close custom-btn-close border p-1 me-0 d-flex align-items-center justify-content-center rounded-circle" data-bs-dismiss="offcanvas" aria-label="Close">
+    <i class="ti ti-x"></i>
+  </button>
+</div>
+    <div class="offcanvas-body">
+      
+        <form>
+          <div class="accordion" id="main_accordion">
+            <!-- Basic Info -->
+            <div class="accordion-item rounded mb-3">
+              <div class="accordion-header">
+								<a href="javascript:void(0);" class="accordion-button accordion-custom-button bg-white rounded fw-medium text-dark" data-bs-toggle="collapse" data-bs-target="#basic">
+									<span class="avatar avatar-md rounded text-dark border me-2"><i class="ti ti-user-plus fs-20"></i></span>
+									Basic Info
+								</a>
+							</div>	
+              <div
+                class="accordion-collapse collapse show"
+                id="edit-basic"
+                data-bs-parent="#main_accordion"
+              >
+                <div class="accordion-body border-top">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <div class="profile-upload">
+                          <div class="profile-upload-img">
+                            <span><i class="ti ti-photo"></i></span>
+                            <img src="" class="preview1" alt="preview" />
+                            <button type="button" class="profile-remove">
+                              <i class="ti ti-x"></i>
+                            </button>
+                          </div>
+                          <div class="profile-upload-content">
+                            <label class="profile-upload-btn">
+                              <i class="ti ti-file-broken"></i> Upload File
+                              <input type="file" class="input-img" />
+                            </label>
+                            <p>JPG, GIF or PNG. Max size of 800K</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >First Name <span class="text-danger">*</span></label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="Darlee"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Last Name <span class="text-danger">*</span></label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="Robertson"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Job Title <span class="text-danger">*</span></label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="Facility Manager"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Company Name</label>
+                        <mat-select
+                          class="select2 custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="NovaWave LLC"
+                            >NovaWave LLC</mat-option
+                          >
+                          <mat-option value="BlueSky Industries"
+                            >BlueSky Industries</mat-option
+                          >
+                          <mat-option value="SilverHawk">SilverHawk</mat-option>
+                          <mat-option value="SummitPeak">SummitPeak</mat-option>
+                          <mat-option value="RiverStone Ventur"
+                            >RiverStone Ventur</mat-option
+                          >
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
+                           <label class="col-form-label"
+          for="email"                  >Email <span class="text-danger">*</span></label
+                          >
+                          <div
+                            class="status-toggle small-toggle-btn d-flex align-items-center"
+                          >
+                            <span class="me-2 label-text">Email Opt Out</span>
+                            <input
+                              type="checkbox"
+                              id="user2"
+                              class="check"
+                              checked=""
+                            />
+                            <label for="user2" class="checktoggle"></label>
+                          </div>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="robertson&#64;gmail.com"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Phone 1 <span class="text-danger">*</span></label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="1234567890"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Phone 2</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Fax</label
+                        >
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <div
+                          class="d-flex align-items-center justify-content-between"
+                        >
+                          <label class="col-form-label" for="reason">Deals</label>
+                          <a href="javascript:void(0);" class="label-add" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_add_2"><i class="ti ti-square-rounded-plus"></i>Add New</a>
+                        </div>
+                        <mat-select
+                          class="select2 custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="Collins" selected
+                            >Collins</mat-option
+                          >
+                          <mat-option value="Konopelski">Konopelski</mat-option>
+                          <mat-option value="Adams">Adams</mat-option>
+                          <mat-option value="Schumm">Schumm</mat-option>
+                          <mat-option value="Wisozk">Wisozk</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Date of Birth</label>
+                        <div class="icon-form-end date-input2">
+                          <span class="form-icon"
+                            ><i class="ti ti-calendar-event"></i
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control datetimepicker"
+                            bsDatepicker
+                            [bsConfig]="{ adaptivePosition: true }"
+                            value="29-02-2020"
+                            container=".date-input2"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Reviews </label>
+                        <div class="icon-form-end">
+                          <span class="form-icon"
+                            ><i class="ti ti-star"></i
+                          ></span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="4.2"
+                            value="4.2"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Owner</label>
+                        <mat-select
+                          [(value)]="selectedOption2"
+                          class="custom-mat-select img-mat-select"
+                          placeholder="Choose Owner"
+                        >
+                          <mat-select-trigger>
+                            @if (selectedOption2) {
+                            <img
+                              [src]="selectedOption2.image"
+                              alt="{{ selectedOption2.name }}"
+                              width="24"
+                              height="24"
+                              style="margin-right: 5px"
+                            />
+                            }
+                            {{ selectedOption2 ? selectedOption2.name : "" }}
+                          </mat-select-trigger>
+                          @for (user of option2; track user) {
+                          <mat-option [value]="user">
+                            <img
+                              src="{{ user.image }}"
+                              alt="{{ user.name }}"
+                              width="24"
+                              height="24"
+                              style="margin-right: 5px"
+                            />
+                            {{ user.name }}
+                          </mat-option>
+                          }
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Tags </label>
+                        <p-chips
+                          class="input-tags form-control"
+                          [ngModelOptions]="{ standalone: true }"
+                          [(ngModel)]="values2"
+                        ></p-chips>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Source <span class="text-danger">*</span></label
+                        >
+                        <mat-select
+                          class="select2 custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option>Choose</mat-option>
+                          <mat-option>Phone Calls</mat-option>
+                          <mat-option>Web Analytics</mat-option>
+                          <mat-option>Social Media</mat-option>
+                          <mat-option>Referral Sites</mat-option>
+                          <mat-option>Previous Purchases</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Industry <span class="text-danger">*</span></label
+                        >
+                        <mat-select
+                          class="select custom-mat-select"
+                          placeholder="Choose"
+                        >
+                          <mat-option value="Choose">Choose</mat-option>
+                          <mat-option value="Retail Industry"
+                            >Retail Industry</mat-option
+                          >
+                          <mat-option value="Banking" selected
+                            >Banking</mat-option
+                          >
+                          <mat-option value="Hotels">Hotels</mat-option>
+                          <mat-option value="Financial Services"
+                            >Financial Services</mat-option
+                          >
+                          <mat-option value="Insurance">Insurance</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Currency <span class="text-danger">*</span></label
+                        >
+                        <mat-select class="select custom-mat-select" placeholder="Choose">
+													<mat-option value="1">Choose</mat-option>
+													<mat-option value="1">Dollar</mat-option>
+													<mat-option value="1">Euro</mat-option>
+													<mat-option value="1">Pound</mat-option>
+													<mat-option value="1">Rupee</mat-option>
+												</mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label"
+              for="name"            >Language <span class="text-danger">*</span></label
+                        >
+                        <mat-select
+                          class="select custom-mat-select"
+                          placeholder="Choose"
+                        >
+                        <mat-option value="Choose">Choose</mat-option>
+                        <mat-option value="English">English</mat-option>
+                        <mat-option value="Arabic">Arabic</mat-option>
+                        <mat-option value="German">French</mat-option>
+                        <mat-option value="German">German</mat-option>
+                        </mat-select>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-wrap mb-0">
+                        <label class="col-form-label"
+              for="name"            >Description <span class="text-danger">*</span></label
+                        >
+                        <textarea class="form-control" rows="5"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Basic Info -->
+
+            <!-- Address Info -->
+            <div class="user-accordion-item">
+              <a
+                href="javascript:void(0);"
+                class="accordion-wrap collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#edit-address"
+                ><span><i class="ti ti-map-pin-cog"></i></span>Address Info</a
+              >
+              <div
+                class="accordion-collapse collapse"
+                id="edit-address"
+                data-bs-parent="#list-accords"
+              >
+                <div class="content-collapse">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Street Address </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="22, Ave Street"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+											
+                      <div class="mb-3">
+                                              <label class="col-form-label">Country</label>
+                                              <mat-select class="select custom-mat-select" placeholder="Choose">
+                                                <mat-option value="1">Choose</mat-option>
+                                                <mat-option value="1">USA</mat-option>
+                                                <mat-option value="1">Canada</mat-option>
+                                                <mat-option value="1">Germany</mat-option>
+                                                <mat-option value="1">France</mat-option>
+                                              </mat-select>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="mb-3">
+                                              <label class="col-form-label">State / Province </label>
+                                              <mat-select class="select custom-mat-select" placeholder="Choose">
+                                                <mat-option value="1">Choose</mat-option>
+                                                <mat-option value="1">California</mat-option>
+                                                <mat-option value="1">New York</mat-option>
+                                                <mat-option value="1">Texas</mat-option>
+                                                <mat-option value="1">Florida</mat-option>
+                                              </mat-select>
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="mb-3 mb-md-0">
+                                              <label class="col-form-label">City </label>
+                                              <mat-select class="select custom-mat-select" placeholder="Choose">
+                                                <mat-option value="1">Choose</mat-option>
+                                                <mat-option value="1">Los Angeles</mat-option>
+                                                <mat-option value="1">San Diego</mat-option>
+                                                <mat-option value="1">Fresno</mat-option>
+                                                <mat-option value="1">San Francisco</mat-option>
+                                              </mat-select>
+                                            </div>
+                                          </div>
+                    <div class="col-md-6">
+                      <div class="form-wrap mb-0">
+                        <label class="col-form-label" for="reason">Zipcode </label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Address Info -->
+
+            <!-- Social Profile -->
+            <div class="user-accordion-item">
+              <a
+                href="javascript:void(0);"
+                class="accordion-wrap collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#edit-social"
+                ><span><i class="ti ti-social"></i></span>Social Profile</a
+              >
+              <div
+                class="accordion-collapse collapse"
+                id="edit-social"
+                data-bs-parent="#list-accords"
+              >
+                <div class="content-collapse">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Facebook</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Skype </label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Linkedin </label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="col-form-label" for="reason">Twitter</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-wrap mb-wrap">
+                        <label class="col-form-label" for="reason">Whatsapp</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="1234567890"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-wrap mb-0">
+                        <label class="col-form-label" for="reason">Instagram</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Social Profile -->
+
+            <!-- Access -->
+            <div class="user-accordion-item">
+              <a
+                href="javascript:void(0);"
+                class="accordion-wrap collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#edit-access"
+                ><span><i class="ti ti-accessible"></i></span>Access</a
+              >
+              <div
+                class="accordion-collapse collapse"
+                id="edit-access"
+                data-bs-parent="#list-accords"
+              >
+                <div class="content-collapse">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="radio-wrap form-wrap">
+                        <label class="col-form-label" for="reason">Visibility</label>
+                        <div class="d-flex flex-wrap">
+                          <div class="radio-btn">
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="edit-public"
+                              name="visible"
+                            />
+                            <label for="edit-public">Public</label>
+                          </div>
+                          <div class="radio-btn">
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="edit-private"
+                              name="visible"
+                            />
+                            <label for="edit-private">Private</label>
+                          </div>
+                          <div
+                            class="radio-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#access_view"
+                          >
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="edit-people"
+                              name="visible"
+                            />
+                            <label for="edit-people">Select People</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="radio-wrap">
+                        <label class="col-form-label" for="reason">Status</label>
+                        <div class="d-flex flex-wrap">
+                          <div class="radio-btn">
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="edit-active"
+                              name="status"
+                              checked=""
+                            />
+                            <label for="edit-active">Active</label>
+                          </div>
+                          <div class="radio-btn">
+                            <input
+                              type="radio"
+                              class="status-radio"
+                              id="edit-inactive"
+                              name="status"
+                            />
+                            <label for="edit-inactive">Inactive</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /Access -->
+          </div>
+
+          <div class="submit-button text-end">
+            <a href="javascript:void(0);" class="btn btn-light sidebar-close1"
+              >Cancel</a
+            >
+            <a href="javascript:void(0);" class="btn btn-primary"
+              >Save Changes</a
+            >
+          </div>
+        </form>
+      
+    </div>
+  
+</div>
+<!-- /Edit Contact -->
+
+<!-- Add New Deals -->
+<div
+class="offcanvas offcanvas-end offcanvas-large" tabindex="-1" id="offcanvas_add_2"
+>
+ 
+<div class="offcanvas-header border-bottom">
+  <h5 class="fw-semibold">Add New Deals</h5>
+  <button type="button" class="btn-close custom-btn-close border p-1 me-0 d-flex align-items-center justify-content-center rounded-circle" data-bs-dismiss="offcanvas" aria-label="Close">
+    <i class="ti ti-x"></i>
+  </button>
+</div>
+    <div class="offcanvas-body">
+      <form >
+        
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Deal Name <span class="text-danger">*</span></label
+                >
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <div class="d-flex align-items-center justify-content-between">
+                  <label class="col-form-label"
+      for="bill"              >Pipeline <span class="text-danger">*</span></label
+                  >
+                </div>
+                <mat-select
+                  class="select2 custom-mat-select"
+                  placeholder="Choose"
+                >
+                  <mat-option value="Choose">Choose</mat-option>
+                  <mat-option value="Sales">Sales</mat-option>
+                  <mat-option value="Marketing">Marketing</mat-option>
+                  <mat-option value="Calls">Calls</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Status <span class="text-danger">*</span></label
+                >
+                <mat-select
+                  class="select2 custom-mat-select"
+                  placeholder="Choose"
+                >
+                  <mat-option value="Choose">Choose</mat-option>
+                  <mat-option value="Open">Open</mat-option>
+                  <mat-option value="Lost">Lost</mat-option>
+                  <mat-option value="Won">Won</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Deal Value<span class="text-danger"> *</span></label
+                >
+                <input class="form-control" type="text" />
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Currency <span class="text-danger">*</span></label
+                >
+                <mat-select class="select custom-mat-select" placeholder="Choose">
+                  <mat-option value="1">Choose</mat-option>
+                  <mat-option value="1">Dollar</mat-option>
+                  <mat-option value="1">Euro</mat-option>
+                  <mat-option value="1">Pound</mat-option>
+                  <mat-option value="1">Rupee</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Period <span class="text-danger">*</span></label
+                >
+                <mat-select
+                  class="select custom-mat-select"
+                  placeholder="Choose"
+                >
+                  <mat-option value="Choose">Choose</mat-option>
+                  <mat-option value="Days">Days</mat-option>
+                  <mat-option value="Month">Month</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Period Value <span class="text-danger">*</span></label
+                >
+                <input class="form-control" type="text" />
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Contact <span class="text-danger">*</span></label
+                >
+                <mat-select
+                  [(value)]="selectedOption3"
+                  class="custom-mat-select img-mat-select-mat-chip"
+                  placeholder="Choose Contact"
+                  multiple
+                >
+                  <mat-select-trigger>
+                    <mat-chip-set>
+                      @for (user of selectedOption3; track user) {
+                      <mat-chip>
+                        <img
+                          [src]="user.image"
+                          alt="{{ user.name }}"
+                          width="24"
+                          height="24"
+                          style="margin-right: 5px"
+                        />
+                        {{ user.name }}
+                        <mat-icon
+                          class="cancel-icon"
+                          (click)="removeOption3(user)"
+                          >cancel</mat-icon
+                        >
+                      </mat-chip>
+                      }
+                    </mat-chip-set>
+                  </mat-select-trigger>
+                  @for (user of option3; track user) {
+                  <mat-option
+                    [value]="user"
+                    class="img-mat-select-mat-chip-options"
+                  >
+                    <img
+                      src="{{ user.image }}"
+                      alt="{{ user.name }}"
+                      width="24"
+                      height="24"
+                      style="margin-right: 5px"
+                    />
+                    {{ user.name }}
+                  </mat-option>
+                  }
+                </mat-select>
+              </div>
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Project <span class="text-danger">*</span></label
+                >
+                <mat-select
+                  class="custom-mat-select height-add"
+                  placeholder="Select options"
+                  [(value)]="matSelectChipDataSelected"
+                  multiple
+                >
+                  <mat-select-trigger>
+                    <mat-chip-set>
+                      @for (option of matSelectChipDataSelected; track option) {
+                      <mat-chip
+                        [removable]="true"
+                        (removed)="removeOptionUnique(option)"
+                      >
+                        {{ option }}
+                        <mat-icon matChipRemove>cancel</mat-icon>
+                      </mat-chip>
+                      }
+                    </mat-chip-set>
+                  </mat-select-trigger>
+                  @for (option of matSelectChipData; track option) {
+                  <mat-option
+                    class="img-mat-select-mat-chip-options"
+                    [value]="option"
+                    >{{ option }}</mat-option
+                  >
+                  }
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Due Date <span class="text-danger">*</span></label
+                >
+                <div class="icon-form date-input3">
+                  <span class="form-icon"
+                    ><i class="ti ti-calendar-check"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control datetimepicker"
+                    bsDatepicker
+                    [bsConfig]="{ adaptivePosition: true }"
+                    placeholder=""
+                    container=".date-input3"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Expected Closing Date
+                  <span class="text-danger">*</span></label
+                >
+                <div class="icon-form date-input4">
+                  <span class="form-icon"
+                    ><i class="ti ti-calendar-check"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control datetimepicker"
+                    bsDatepicker
+                    [bsConfig]="{ adaptivePosition: true }"
+                    placeholder=""
+                    container=".date-input4"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Assignee <span class="text-danger">*</span></label
+                >
+                <mat-select
+                  [(value)]="selectedOption4"
+                  class="custom-mat-select img-mat-select-mat-chip"
+                  placeholder="Choose Contact"
+                  multiple
+                >
+                  <mat-select-trigger>
+                    <mat-chip-set>
+                      @for (user of selectedOption4; track user) {
+                      <mat-chip>
+                        <img
+                          [src]="user.image"
+                          alt="{{ user.name }}"
+                          width="24"
+                          height="24"
+                          style="margin-right: 5px"
+                        />
+                        {{ user.name }}
+                        <mat-icon
+                          class="cancel-icon"
+                          (click)="removeOption4(user)"
+                          >cancel</mat-icon
+                        >
+                      </mat-chip>
+                      }
+                    </mat-chip-set>
+                  </mat-select-trigger>
+                  @for (user of option4; track user) {
+                  <mat-option
+                    [value]="user"
+                    class="img-mat-select-mat-chip-options"
+                  >
+                    <img
+                      src="{{ user.image }}"
+                      alt="{{ user.name }}"
+                      width="24"
+                      height="24"
+                      style="margin-right: 5px"
+                    />
+                    {{ user.name }}
+                  </mat-option>
+                  }
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Follow Up Date <span class="text-danger">*</span></label
+                >
+                <div class="icon-form date-input5">
+                  <span class="form-icon"
+                    ><i class="ti ti-calendar-check"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control datetimepicker"
+                    bsDatepicker
+                    [bsConfig]="{ adaptivePosition: true }"
+                    placeholder=""
+                    container=".date-input5"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Source <span class="text-danger">*</span></label
+                >
+                <mat-select
+                  class="select custom-mat-select"
+                  placeholder="Select"
+                >
+                  <mat-option value="Select">Select</mat-option>
+                  <mat-option value="Google">Google</mat-option>
+                  <mat-option value="Social Media">Social Media</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Tags <span class="text-danger">*</span></label
+                >
+                <p-chips
+                  class="input-tags form-control"
+                  [ngModelOptions]="{ standalone: true }"
+                  [(ngModel)]="values3"
+                ></p-chips>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Priority <span class="text-danger">*</span></label
+                >
+                <mat-select
+                  class="select custom-mat-select"
+                  placeholder="Select"
+                >
+                  <mat-option value="Select">Select</mat-option>
+                  <mat-option value="Highy">High</mat-option>
+                  <mat-option value="Low">Low</mat-option>
+                  <mat-option value="Medium">Medium</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <label class="col-form-label"
+          for="text"        >Description <span class="text-danger">*</span></label
+                >
+                <ngx-editor [editor]="editor">
+                  <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                  </ngx-editor-menu>
+                </ngx-editor>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-end">
+						<button type="button" data-bs-dismiss="offcanvas" class="btn btn-light me-2">Cancel</button>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create_success_2">Create</button>
+					</div>
+       
+      </form>
+    </div>
+ 
+</div>
+<!-- /Add New Deals -->
+
+<!-- Delete Contact -->
+<div class="modal fade" id="delete_contact" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-body">
+      <div class="success-message text-center">
+        <div class="success-popup-icon">
+          <i class="ti ti-trash-x"></i>
+        </div>
+        <h3>Remove Contacts?</h3>
+        <p class="del-info">
+          Are you sure you want to remove contact you selected.
+        </p>
+        <div class="col-lg-12 text-center modal-btn">
+          <a
+            href="javascript:void(0);"
+            class="btn btn-light"
+            data-bs-dismiss="modal"
+            >Cancel</a
+          >
+          <a [routerLink]="routes.contactList" class="btn btn-danger"
+            >Yes, Delete it</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<!-- /Delete Contact -->
+
+<!-- Create Contact -->
+<div class="modal custom-modal fade" id="create_contact" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 m-0 justify-content-end">
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="success-message text-center">
+          <div class="success-popup-icon bg-light-blue">
+            <i class="ti ti-user-plus"></i>
+          </div>
+          <h3>Contact Created Successfully!!!</h3>
+          <p>View the details of contact, created</p>
+          <div class="col-lg-12 text-center modal-btn">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-light"
+              data-bs-dismiss="modal"
+              >Cancel</a
+            >
+            <a [routerLink]="routes.contactDetails" class="btn btn-primary"
+              >View Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Create Contact -->
+
+<!-- Add New View -->
+<div class="modal custom-modal fade" id="save_view" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add New View</h5>
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="col-form-label" for="reason">View Name</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="modal-btn text-end">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-light"
+              data-bs-dismiss="modal"
+              >Cancel</a
+            >
+            <button type="submit" class="btn btn-danger">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Add New View -->
+
+<!-- Access -->
+<div class="modal custom-modal fade" id="access_view" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Access For</h5>
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-wrap icon-form">
+            <span class="form-icon"><i class="ti ti-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search" />
+          </div>
+          <div class="access-wrap">
+            <ul>
+              <li class="select-people-checkbox">
+                <label class="checkboxs">
+                  <input type="checkbox" />
+                  <span class="checkmarks"></span>
+                  <span class="people-profile">
+                    <img src="assets/img/profiles/avatar-19.jpg" alt="" />
+                    <a href="javascript:void(0);">Darlee Robertson</a>
+                  </span>
+                </label>
+              </li>
+              <li class="select-people-checkbox">
+                <label class="checkboxs">
+                  <input type="checkbox" />
+                  <span class="checkmarks"></span>
+                  <span class="people-profile">
+                    <img src="assets/img/profiles/avatar-20.jpg" alt="" />
+                    <a href="javascript:void(0);">Sharon Roy</a>
+                  </span>
+                </label>
+              </li>
+              <li class="select-people-checkbox">
+                <label class="checkboxs">
+                  <input type="checkbox" />
+                  <span class="checkmarks"></span>
+                  <span class="people-profile">
+                    <img src="assets/img/profiles/avatar-21.jpg" alt="" />
+                    <a href="javascript:void(0);">Vaughan</a>
+                  </span>
+                </label>
+              </li>
+              <li class="select-people-checkbox">
+                <label class="checkboxs">
+                  <input type="checkbox" />
+                  <span class="checkmarks"></span>
+                  <span class="people-profile">
+                    <img src="assets/img/profiles/avatar-01.jpg" alt="" />
+                    <a href="javascript:void(0);">Jessica</a>
+                  </span>
+                </label>
+              </li>
+              <li class="select-people-checkbox">
+                <label class="checkboxs">
+                  <input type="checkbox" />
+                  <span class="checkmarks"></span>
+                  <span class="people-profile">
+                    <img src="assets/img/profiles/avatar-16.jpg" alt="" />
+                    <a href="javascript:void(0);">Carol Thomas</a>
+                  </span>
+                </label>
+              </li>
+              <li class="select-people-checkbox">
+                <label class="checkboxs">
+                  <input type="checkbox" />
+                  <span class="checkmarks"></span>
+                  <span class="people-profile">
+                    <img src="assets/img/profiles/avatar-22.jpg" alt="" />
+                    <a href="javascript:void(0);">Dawn Mercha</a>
+                  </span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-btn text-end">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-light"
+              data-bs-dismiss="modal"
+              >Cancel</a
+            >
+            <button type="submit" class="btn btn-primary">Confirm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Access -->
+
+<!-- Create Deal -->
+<div class="modal custom-modal fade" id="create_success_2" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 m-0 justify-content-end">
+        <button  class="btn-close" data-bs-dismiss="modal" aria-label="Close">	
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="success-message text-center">
+          <div class="success-popup-icon bg-light-blue">
+            <i class="ti ti-medal"></i>
+          </div>
+          <h3>Deal Created Successfully!!!</h3>
+          <p>View the details of deal, created</p>
+          <div class="col-lg-12 text-center modal-btn">
+            <a href="javascript:void(0);" class="btn btn-light" data-bs-dismiss="modal">Cancel</a>
+            <a (click)="navigateToGigs()" (keydown.enter)="navigateToGigs()"  tabindex="0" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Create Deal -->

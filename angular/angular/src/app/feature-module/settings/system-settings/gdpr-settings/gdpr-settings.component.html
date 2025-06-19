@@ -1,0 +1,202 @@
+<div class="page-wrapper">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h4 class="page-title">Settings</h4>
+            </div>
+            <div class="col-4 text-end">
+              <div class="head-icons">
+                <a [routerLink] = "routes.gdprSettings" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-original-title="Refresh" matTooltip="Refresh"><i class="ti ti-refresh-dot"></i></a>
+                <app-collapse-header></app-collapse-header>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Settings Menu -->
+        <div class="card">
+          <div class="card-body pb-0 pt-2">
+            <div class="settings-menu">
+              <ul class="nav nav-tabs nav-tabs-bottom">
+                <li class="nav-item me-3">
+                  <a [routerLink] = "routes.generalSettings" class="nav-link px-0">
+                    <i class="ti ti-settings-cog"></i> General Settings
+                  </a>
+                </li>
+                <li class="nav-item me-3">
+                  <a [routerLink] = "routes.companySettings" class="nav-link px-0">
+                    <i class="ti ti-world-cog"></i> Website Settings
+                  </a>
+                </li>
+                <li class="nav-item me-3">
+                  <a [routerLink] = "routes.invoiceSettings" class="nav-link px-0">
+                    <i class="ti ti-apps"></i> App Settings
+                  </a>
+                </li>
+                <li class="nav-item me-3">
+                  <a [routerLink] = "routes.emailSettings" class="nav-link px-0 active">
+                    <i class="ti ti-device-laptop"></i> System Settings
+                  </a>
+                </li>
+                <li class="nav-item me-3">
+                  <a [routerLink] = "routes.paymentGatewaySettings" class="nav-link px-0">
+                    <i class="ti ti-moneybag"></i> Financial Settings
+                  </a>
+                </li>
+                <li class="nav-item me-3">
+                  <a [routerLink] = "routes.storageSettings" class="nav-link px-0">
+                    <i class="ti ti-flag-cog"></i> Other Settings
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /Settings Menu -->
+        <div class="row">
+          <div class="col-xl-3 col-lg-12 theiaStickySidebar">
+            <div class="stickybar">
+              <!-- Settings Sidebar -->
+              <div class="card">
+                <div class="card-body">
+                  <div class="settings-sidebar">
+                    <h4>Other Settings</h4>
+                    <ul>
+                      <li>
+                        <a [routerLink] = "routes.emailSettings">Email Settings</a>
+                      </li>
+                      <li>
+                        <a [routerLink] = "routes.smsGateway">SMS Gateways</a>
+                      </li>
+                      <li>
+                        <a [routerLink] = "routes.gdprSettings" class="active">GDPR Cookies</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Settings Sidebar -->
+            </div>
+          </div>
+
+          <div class="col-xl-9 col-lg-12">
+
+            <!-- GDPR Cookies -->
+            <div class="card">
+              <div class="card-body">
+                <div class="settings-header">
+                  <h4>GDPR Cookies</h4>
+                </div>
+                <div class="settings-form">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="setting-title">
+                          <h6>Cookies Content Text</h6>
+                          <p>You can configure the text here</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-wrap">
+                          <div class="summernote"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="setting-title">
+                          <h6>Cookies Position</h6>
+                          <p>You can configure the type</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-wrap">
+                          <mat-select [(ngModel)]="selectedValue1" [ngModelOptions]="{standalone: true}"
+                          class="select custom-mat-select" placeholder="Left">
+                          @for (data of selectedList1; track data) {
+                            <mat-option [value]="data.value">
+                              {{data.value}}
+                            </mat-option>
+                          }
+                        </mat-select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="setting-title">
+                          <h6>Agree Button Text</h6>
+                          <p>You can configure the text here</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-wrap">
+                          <input type="text" class="form-control" value="Manage">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="setting-title">
+                          <h6>Decline Button Text</h6>
+                          <p>You can configure the text here</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-wrap">
+                          <input type="text" class="form-control" value="Manage">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row align-items-center">
+                      <div class="col-md-6">
+                        <div class="setting-title">
+                          <h6>Show Decline Button</h6>
+                          <p>To display decline button</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-wrap">
+                          <div class="status-toggle">
+                            <input type="checkbox" id="sms1" class="check" checked="">
+                            <label for="sms1" class="checktoggle"> </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="setting-title">
+                          <h6>Link for Cookies Page</h6>
+                          <p>You can configure the link here</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-wrap">
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="submit-button">
+                      <a href="javascript:void(0);" class="btn btn-light">Cancel</a>
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- /GDPR Cookies -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

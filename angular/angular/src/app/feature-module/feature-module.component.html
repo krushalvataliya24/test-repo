@@ -1,0 +1,26 @@
+<div [ngClass]="{'mini-sidebar': layoutMode === '2' && miniSidebar === true || sidebarSize==='2'|| miniSidebar === true,
+  'menu-horizontal': layoutMode === '3' || layoutMode === '4' || layoutMode === '8'|| layoutMode === '14'|| layoutMode === '15',
+  'layout-box-mode':layoutWidth === '2','expand-menu':sidebarSize==='3' || expandMenu === true && miniSidebar === true || expandMenu === true && layoutMode === '2',
+  'slide-nav': mobileSidebar === true
+ }" style="--primary-rgb-picr : {{dthemeColor}}; --sidebar--rgb-picr : {{selectedColor}}; --topbar--rgb-picr : {{selectedColor1}};  --topbarcolor--rgb-picr : {{horizontalColor}};" [class.header-collapse]="isCollapsed">
+<div class="main-wrapper">
+
+  <div *ngIf="showPreloader" class="preloader">
+    <div class="preloader">
+      <div class="loader"></div>
+    </div>
+  </div>
+
+
+  @if (page !== 'coming-soon' && page !== 'under-maintenance') {
+  <app-header></app-header>
+
+  <app-sidebar></app-sidebar>
+
+  <app-horizontal-sidebar></app-horizontal-sidebar>
+  }
+  @if(!withoutLayouts ) {
+    <app-layout></app-layout>
+    }
+  <router-outlet></router-outlet>
+</div>

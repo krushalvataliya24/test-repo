@@ -1,0 +1,87 @@
+<div class="account-content">
+    <div class="login-wrapper account-bg register-bg">
+        <div class="login-content">
+            <form >
+                <div class="login-user-info">
+                    <div class="login-logo">
+                       <img src="assets/img/logo.svg" class="img-fluid" alt="Logo">
+                   </div>
+                   <div class="login-heading">
+                       <h4>Register</h4>
+                       <p>Create new CRMS account</p>
+                   </div>
+                   <div class="form-wrap">
+                       <label class="col-form-label" for="name">Name</label>
+                       <div class="form-wrap-icon">
+                           <input type="text" class="form-control">
+                           <i class="ti ti-user"></i>
+                       </div>
+                   </div>
+                   <div class="form-wrap">
+                       <label class="col-form-label" for="email">Email Address</label>
+                       <div class="form-wrap-icon">
+                           <input type="text" class="form-control">
+                           <i class="ti ti-mail"></i>
+                       </div>
+                   </div>
+                   <div class="form-wrap">
+                       <label class="col-form-label" for="Password">Password</label>
+                       <div class="pass-group">
+                        <input [type]="password[1] ? 'text' : 'password' " class="pass-input form-control">
+                        <span class="ti toggle-password " [ngClass]=" password[1] ? 'ti-eye' : 'ti-eye-off'" (click)="togglePassword(1)"  (keydown.enter)="togglePassword(1)"
+                        tabindex="0"></span>
+                    </div>
+                   </div>
+                   <div class="form-wrap">
+                       <label class="col-form-label" for="reason">Confirm Password</label>
+                       <div class="pass-group">
+                        <input [type]="password[2] ? 'text' : 'password' " class="pass-input form-control">
+                        <span class="ti toggle-password " [ngClass]=" password[2] ? 'ti-eye' : 'ti-eye-off'" (click)="togglePassword(2)"  (keydown.enter)="togglePassword(2)"
+                        tabindex="0"></span>
+                       </div>
+                   </div>
+                   <div class="form-wrap form-wrap-checkbox">
+                       <div class="custom-control custom-checkbox">
+                            <label class="check">
+                                <input type="checkbox">
+                                <span class="box"></span>
+                                I agree to the <a href="javascript:void(0);" class="forgot-link ms-1">Terms & Privacy</a>
+                            </label>
+                       </div>
+                   </div>
+                   <div class="form-wrap">
+                       <button type="submit" class="btn btn-primary" (click)="navigate()">Sign Up</button>
+                   </div>
+                   <div class="login-form">
+                       <h6>Already have an account?<a [routerLink]="routes.login" class="hover-a"> Sign In Instead</a></h6>
+                   </div>
+                   <div class="form-set-login or-text">
+                       <h4>OR</h4>
+                   </div>
+                   <div class="login-social-link">
+                       <ul class="nav">
+                           <li>
+                               <a href="javascript:void(0);" class="facebook-logo">
+                                   <img src="assets/img/icons/facebook-logo.svg" alt="Facebook">
+                               </a>
+                           </li>
+                           <li>
+                               <a href="javascript:void(0);">
+                                   <img src="assets/img/icons/google-logo.svg" alt="Google">
+                               </a>
+                           </li>
+                           <li>
+                               <a href="javascript:void(0);" class="apple-logo">
+                                   <img src="assets/img/icons/apple-logo.svg" alt="Apple">
+                               </a>
+                           </li>
+                       </ul>
+                       <div class="copyright-text">
+                           <p>Copyright &copy;2024 - CRMS</p>
+                       </div>
+                   </div>
+               </div>
+            </form>
+        </div>
+    </div>
+</div>

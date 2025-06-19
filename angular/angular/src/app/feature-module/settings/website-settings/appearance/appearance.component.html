@@ -1,0 +1,222 @@
+<div class="page-wrapper">
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h4 class="page-title">Settings</h4>
+            </div>
+            <div class="col-4 text-end">
+              <div class="head-icons">
+                <a [routerLink] = "routes.appearance" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-original-title="Refresh" matTooltip="Refresh"><i class="ti ti-refresh-dot"></i></a>
+                <app-collapse-header></app-collapse-header>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Page Header -->
+
+        <!-- Settings Menu -->
+        <div class="card">
+          <div class="card-body pb-0 pt-2">
+            <ul class="nav nav-tabs nav-tabs-bottom">
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.generalSettings" class="nav-link px-0">
+                  <i class="ti ti-settings-cog me-2"></i>General Settings
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.companySettings" class="nav-link px-0 active">
+                  <i class="ti ti-world-cog me-2"></i>Website Settings
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.invoiceSettings" class="nav-link px-0">
+                  <i class="ti ti-apps me-2"></i>App Settings
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.emailSettings" class="nav-link px-0">
+                  <i class="ti ti-device-laptop me-2"></i>System Settings
+                </a>
+              </li>
+              <li class="nav-item me-3">
+                <a [routerLink] = "routes.paymentGatewaySettings" class="nav-link px-0">
+                  <i class="ti ti-moneybag me-2"></i>Financial Settings
+                </a>
+              </li>
+              <li class="nav-item">
+                <a [routerLink] = "routes.storageSettings" class="nav-link px-0">
+                  <i class="ti ti-flag-cog me-2"></i>Other Settings
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /Settings Menu -->
+
+        <div class="row">
+          <div class="col-xl-3 col-lg-12 theiaStickySidebar">
+            <div class="stickybar">
+              <!-- Settings Sidebar -->
+              <div class="card">
+                <div class="card-body">
+                  <div class="settings-sidebar">
+                    <h4 class="fw-semibold mb-3">Website Settings</h4>
+                    <div class="list-group list-group-flush settings-sidebar">
+                      <a [routerLink] = "routes.companySettings" class="fw-medium">Company Settings</a>
+                      <a [routerLink] = "routes.localizationSettings" class="fw-medium">Localization</a>
+                      <a [routerLink] = "routes.prefixes" class="fw-medium">Prefixes</a>
+                      <a [routerLink] = "routes.preference" class="fw-medium">Preference</a>
+                      <a [routerLink] = "routes.appearance" class="fw-medium active">Appearance</a>
+                      <a [routerLink] = "routes.languageSettings"class="fw-medium">Language</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Settings Sidebar -->
+            </div>
+          </div>
+
+          <div class="col-xl-9 col-lg-12">
+
+            <!-- Appearance -->
+            <div class="card">
+              <div class="card-body">
+                <h4 class="fw-semibold mb-3">Appearance</h4>
+                <form>
+                  <div class="mb-0">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <h6>Select Theme</h6>
+                          <p>Select theme of the website</p>
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="mb-3 mb-0">
+                          <div class="theme-type-images d-flex align-items-center">
+                            <div class="theme-image " [class.active]="isActive === 'Light'" (click)="setActive('Light')" (keydown.enter)="setActive('Light')" (keydown.space)="setActive('Light')"   tabindex="0">
+                              <div class="theme-image-set">
+                                <img src="assets/img/theme/theme-01.jpg" alt="">
+                              </div>
+                              <span>Light</span>
+                            </div>
+                            <div class="theme-image" [class.active]="isActive === 'Dark'" (click)="setActive('Dark')"  (keydown.enter)="setActive('Dark')" (keydown.space)="setActive('Dark')"  tabindex="0">
+                              <div class="theme-image-set">
+                                <img src="assets/img/theme/theme-02.jpg" alt="">
+                              </div>
+                              <span>Dark</span>
+                            </div>
+                            <div class="theme-image" [class.active]="isActive === 'Automatic'" (click)="setActive('Automatic')" (keydown.enter)="setActive('Automatic')" (keydown.space)="setActive('Automatic')"  tabindex="0">
+                              <div class="theme-image-set">
+                                <img src="assets/img/theme/theme-03.jpg" alt="">
+                              </div>
+                              <span>Automatic</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <h6>Accent Color</h6>
+                          <p>Select accent color of website</p>
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="mb-3">
+                          <div class="theme-colors">
+                            <ul>
+                              <li>
+                                <span class="themecolorset defaultcolor" [class.active]="isActive === 'defaultcolor'" (click)="setActive('defaultcolor')" (keydown.enter)="setActive('defaultcolor')" (keydown.space)="setActive('defaultcolor')"  tabindex="0"></span>
+                              </li>
+                              <li>
+                                <span class="themecolorset theme-violet" [class.active]="isActive === 'theme-violet'" (click)="setActive('theme-violet')" (keydown.enter)="setActive('theme-violet')"  (keydown.enter)="setActive('theme-violet')"  tabindex="0" ></span>
+                              </li>
+                              <li>
+                                <span class="themecolorset theme-blue" [class.active]="isActive === 'theme-blue'" (click)="setActive('theme-blue')" (keydown.enter)="setActive('theme-blue')"  (keydown.enter)="setActive('theme-blue')"  tabindex="0"></span>
+                              </li>
+                              <li>
+                                <span class="themecolorset theme-brown" [class.active]="isActive === 'theme-brown'" (click)="setActive('theme-brown')" (keydown.enter)="setActive('theme-brown')" (keydown.enter)="setActive('theme-brown')"  tabindex="0"></span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <h6>Expand Sidebar</h6>
+                          <p>To display in all the pages</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <div class="status-toggle">
+                            <input type="checkbox" id="prefer3" class="check" checked="">
+                            <label for="prefer3" class="checktoggle"> </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <h6>Sidebar Size</h6>
+                          <p>Select size of sidebar to display</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <mat-select [(ngModel)]="selectedValue1" [ngModelOptions]="{standalone: true}" class="select custom-mat-select"  placeholder="Small - 85px">
+                            @for (data of selectedList1; track data) {
+                              <mat-option [value]="data.value">
+                                {{data.value}}
+                              </mat-option>
+                            }
+                          </mat-select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <h6>Font Family</h6>
+                          <p>Select font family of website</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="mb-3">
+                          <mat-select [(ngModel)]="selectedValue2" [ngModelOptions]="{standalone: true}" class="select custom-mat-select"  placeholder="Nunito">
+                            @for (data of selectedList2; track data) {
+                              <mat-option [value]="data.value">
+                                {{data.value}}
+                              </mat-option>
+                            }
+                          </mat-select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="submit-button">
+                    <a href="javascript:void(0);" class="btn btn-light me-3">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- /Appearance -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
