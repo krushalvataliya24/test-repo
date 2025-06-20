@@ -1,0 +1,236 @@
+<template>
+  <layouts-header></layouts-header>
+  <layouts-sidebar></layouts-sidebar>
+  <div class="page-wrapper">
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Page Header -->
+          <page-header :title="title" />
+          <!-- /Page Header -->
+
+          <div class="card">
+            <!-- Search -->
+            <div class="card-header">
+              <!-- Search -->
+              <div class="row align-items-center">
+                <div class="col-sm-4">
+                  <div class="icon-form mb-3 mb-sm-0">
+                    <span class="form-icon"><i class="ti ti-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Search Source" />
+                  </div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="text-sm-end">
+                    <a
+                      href="javascript:void(0);"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#add_source"
+                      ><i class="ti ti-square-rounded-plus me-2"></i>Add New Sources</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- /Search -->
+            </div>
+            <!-- /Search -->
+            <div class="card-body">
+              <!-- Contact List -->
+              <div class="table-responsive custom-table">
+                <a-table
+                  class="table"
+                  :columns="columns"
+                  :data-source="data"
+                  :row-selection="rowSelection"
+                >
+                  <template #bodyCell="{ column, record }">
+                    <template v-if="column.key === 'Title'"
+                      ><span class="title-name">{{ record.Title }}</span></template
+                    >
+                    <template v-else-if="column.key === 'Status'">
+                      <span :class="record.Class">{{ record.Status }}</span>
+                    </template>
+                    <template v-else-if="column.key === 'action'">
+                      <div class="dropdown table-action">
+                        <a
+                          href="#"
+                          class="action-icon"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                          ><i class="fa fa-ellipsis-v"></i
+                        ></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a
+                            class="dropdown-item"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit_source"
+                            ><i class="ti ti-edit text-blue"></i> Edit</a
+                          ><a
+                            class="dropdown-item"
+                            href="#"
+                            data-bs-toggle="modal"
+                            data-bs-target="#delete_source"
+                            ><i class="ti ti-trash text-danger"></i> Delete</a
+                          >
+                        </div>
+                      </div>
+                    </template>
+                  </template>
+                </a-table>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="datatable-length"></div>
+                </div>
+                <div class="col-md-6">
+                  <div class="datatable-paginate"></div>
+                </div>
+              </div>
+              <!-- /Contact List -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <sources-modal></sources-modal>
+</template>
+<script>
+const columns = [
+  {
+    title: "",
+    dataIndex: "",
+    sorter: false,
+  },
+  {
+    title: "Title",
+    dataIndex: "Title",
+    key: "Title",
+    sorter: {
+      compare: (a, b) => {
+        a = a.Title.toLowerCase();
+        b = b.Title.toLowerCase();
+        return a > b ? -1 : b > a ? 1 : 0;
+      },
+    },
+  },
+  {
+    title: "CreatedAt",
+    dataIndex: "CreatedAt",
+    sorter: {
+      compare: (a, b) => {
+        a = a.CreatedAt.toLowerCase();
+        b = b.CreatedAt.toLowerCase();
+        return a > b ? -1 : b > a ? 1 : 0;
+      },
+    },
+  },
+  {
+    title: "Status",
+    dataIndex: "Status",
+    key: "Status",
+    sorter: {
+      compare: (a, b) => {
+        a = a.Status.toLowerCase();
+        b = b.Status.toLowerCase();
+        return a > b ? -1 : b > a ? 1 : 0;
+      },
+    },
+  },
+  {
+    title: "Action",
+    key: "action",
+    sorter: true,
+  },
+];
+const data = [
+  {
+    key: 1,
+    Title: "Phone Calls",
+    CreatedAt: "25 Sep 2023, 01:22 pm",
+    Status: "Active",
+    Class: "badge badge-pill badge-status bg-success",
+  },
+  {
+    key: 2,
+    Title: "Social Media",
+    CreatedAt: "29 Sep 2023, 10:20 pm",
+    Status: "Active",
+    Class: "badge badge-pill badge-status bg-success",
+  },
+  {
+    key: 3,
+    Title: "Referral Sites",
+    CreatedAt: "04 Oct 2023, 08:30 am",
+    Status: "Active",
+    Class: "badge badge-pill badge-status bg-success",
+  },
+  {
+    key: 4,
+    Title: "Web Analytics",
+    CreatedAt: "17 Oct 2023, 11:45 am",
+    Status: "Inactive",
+    Class: "badge badge-pill badge-status bg-danger",
+  },
+  {
+    key: 5,
+    Title: "Previous Purchases",
+    CreatedAt: "24 Oct 2023, 09:14 pm",
+    Status: "Active",
+    Class: "badge badge-pill badge-status bg-success",
+  },
+  {
+    key: 6,
+    Title: "Lead & Opportunity",
+    CreatedAt: "08 Nov 2023, 09:56 am",
+    Status: "Active",
+    Class: "badge badge-pill badge-status bg-success",
+  },
+  {
+    key: 7,
+    Title: "Image-based Features",
+    CreatedAt: "14 Nov 2023, 04:19 pm",
+    Status: "Active",
+    Class: "badge badge-pill badge-status bg-success",
+  },
+  {
+    key: 8,
+    Title: "Bots",
+    CreatedAt: "23 Nov 2023, 11:14 pm",
+    Status: "Active",
+    Class: "badge badge-pill badge-status bg-success",
+  },
+  {
+    key: 9,
+    Title: "Insights",
+    CreatedAt: "10 Dec 2023, 06:43 am",
+    Status: "Active",
+    Class: "badge badge-pill badge-status bg-success",
+  },
+  {
+    key: 10,
+    Title: "Commerce",
+    CreatedAt: "25 Dec 2023, 08:17 pm",
+    Status: "Active",
+    Class: "badge badge-pill badge-status bg-success",
+  },
+];
+const rowSelection = {
+  onChange: () => {},
+  onSelect: () => {},
+  onSelectAll: () => {},
+};
+
+export default {
+  data() {
+    return {
+      title: "Sources",
+      data,
+      columns,
+      rowSelection,
+    };
+  },
+};
+</script>

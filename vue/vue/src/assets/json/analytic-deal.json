@@ -1,0 +1,51 @@
+[
+	{
+		"id" : "1",
+		"name" : "Collins",
+		"stage" : "Conversation",
+		"value" : "$04,51,000",
+		"probability" : "85%",
+		"email" : "caroo3@example.com",
+		"status" : "Won",
+		"statusclass": "badge badge-pill badge-status bg-success"
+	},
+	{
+		"id" : "2",
+		"name" : "Konopelski",
+		"stage" : "Pipeline",
+		"value" : "$04,14,800",
+		"probability" : "15%",
+		"status" : "Lost",
+		"statusclass": "badge badge-pill badge-status bg-danger"
+	},
+	{
+		"id" : "3",
+		"name" : "Adams",
+		"stage" : "Won",
+		"value" : "$04,14,800",
+		"probability" : "95%",
+		"status" : "Won",
+		"statusclass": "badge badge-pill badge-status bg-success"
+	},
+	{
+		"id" : "4",
+		"name" : "Schumm",
+		"stage" : "Lost",
+		"value" : "$9,14,400",
+		"probability" : "47%",
+		"status" : "Won",
+		"statusclass": "badge badge-pill badge-status bg-success"
+	},
+	{
+		"id" : "5",
+		"name" : "Wisozk",
+		"stage" : "Follow Up",
+		"value" : "$11,14,400",
+		"probability" : "98%",
+		"status" : "Won",
+		"statusclass": "badge badge-pill badge-status bg-success"
+	}
+
+]
+
+

@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "BadgeClass": "badge badge-success",
+        "Image": "company-icon-01.svg",
+        "Badge": "Accepted"
+    },
+    {
+        "id": 2,
+        "BadgeClass": "badge badge-danger",
+        "Image": "company-icon-02.svg",
+        "Badge": "Deleted"
+    },
+    {
+        "id": 3,
+        "BadgeClass": "badge bg-pending",
+        "Image": "company-icon-03.svg",
+        "Badge": "Draft"
+    },
+    {
+        "id": 4,
+        "BadgeClass": "badge badge-warning",
+        "Image": "company-icon-04.svg",
+        "Badge": "Declined"
+    },
+    {
+        "id": 5,
+        "BadgeClass": "badge badge-warning",
+        "Image": "company-icon-05.svg",
+        "Badge": "Declined"
+    },
+    {
+        "id": 6,
+        "BadgeClass": "badge badge-tertiary",
+        "Image": "company-icon-06.svg",
+        "Badge": "Sent"
+    },
+    {
+        "id": 7,
+        "BadgeClass": "badge badge-danger",
+        "Image": "company-icon-07.svg",
+        "Badge": "Deleted"
+    },
+    {
+        "id": 8,
+        "BadgeClass": "badge bg-pending",
+        "Image": "company-icon-08.svg",
+        "Badge": "Draft"
+    }
+]

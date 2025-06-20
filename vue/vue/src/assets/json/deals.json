@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "Deal_Name": "Collins",
+      "Stage": "Qualify To Buy",
+      "Deal_Value": "$04,51,000",
+      "tag1": "Collab",
+      "close_date": "25 Sep 2023",
+      "owner": "Hendry",
+      "Probability": "90%",
+      "Status": "0"
+    },
+    {
+      "id": 2,
+      "Deal_Name": "Konopelski",
+      "Stage": "Proposal Made",
+      "Deal_Value": "$03,12,500",
+      "tag1": "Rated",
+      "close_date": "29 Sep 2023",
+      "owner": "Guillory",
+      "Probability": "15 %",
+      "Status": "1"
+    },
+    {
+      "id": 3,
+      "Deal_Name": "Adams",
+      "Stage": "Contact Made",
+      "Deal_Value": "$04,14,800",
+      "tag1": "Rejected",
+      "close_date": "04 Oct 2023",
+      "owner": "Jami",
+      "Probability": "95 %",
+      "Status": "0"
+    },
+    {
+      "id": 4,
+      "Deal_Name": "Schumm",
+      "Stage": "Qualify To Buy",
+      "Deal_Value": "$11,14,400",
+      "tag1": "Collab",
+      "close_date": "15 Oct 2023",
+      "owner": "Therasa",
+      "Probability": "99 %",
+      "Status": "0"
+    },
+    {
+      "id": 5,
+      "Deal_Name": "Wisozk",
+      "Stage": "Presentation",
+      "Deal_Value": "$16,11,400",
+      "tag1": "Rated",
+      "close_date": "27 Oct 2023",
+      "owner": "Espinosa",
+      "Probability": "10 %",
+      "Status": "2"
+    },
+    {
+      "id": 6,
+      "Deal_Name": "Heller",
+      "Stage": "Appointment",
+      "Deal_Value": "$78,11,800",
+      "tag1": "Rated",
+      "close_date": "07 Nov 2023",
+      "owner": "Martin",
+      "Probability": "70 %",
+      "Status": "0"
+    },
+    {
+      "id": 7,
+      "Deal_Name": "Gutkowski",
+      "Stage": "Proposal Made",
+      "Deal_Value": "$09,05,947",
+      "tag1": "Promotion",
+      "close_date": "12 Nov 2023",
+      "owner": "Newell",
+      "Probability": "10 %",
+      "Status": "2"
+    },
+    {
+      "id": 8,
+      "Deal_Name": "Walter",
+      "Stage": "Qualify To Buy",
+      "Deal_Value": "$04,51,000",
+      "tag1": "Rejected",
+      "close_date": "23 Nov 2023",
+      "owner": "Janet",
+      "Probability": "90 %",
+      "Status": "0"
+    },
+    {
+      "id": 9,
+      "Deal_Name": "Hansen",
+      "Stage": "Appointment",
+      "Deal_Value": "$72,14,078",
+      "tag1": "Collab",
+      "close_date": "11 Dec 2023",
+      "owner": "Craig",
+      "Probability": "40 %",
+      "Status": "0"
+    },
+    {
+      "id": 10,
+      "Deal_Name": "Leuschke",
+      "Stage": "Proposal Made",
+      "Deal_Value": "$09,05,947",
+      "tag1": "Rated",
+      "close_date": "17 Dec 2023",
+      "owner": "Daniel",
+      "Probability": "47 %",
+      "Status": "1"
+    }
+  ]
+}

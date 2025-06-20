@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "Title": "SEO Contracts",
+        "Content": "Category : Contracts under Seal",
+        "Image": "company-icon-01.svg",
+        "Company": "NovaWave LLC"
+    },
+    {
+        "id": 2,
+        "Title": "Redwood Inc",
+        "Content": "Category : Contracts under Seal",
+        "Image": "company-icon-02.svg",
+        "Company": "NovaWave LLC"
+    },
+    {
+        "id": 3,
+        "Title": "HarborView",
+        "Content": "Implied Contracts",
+        "Image": "company-icon-03.svg",
+        "Company": "Development"
+    },
+    {
+        "id": 4,
+        "Title": "Executory Contracts",
+        "Content": "Category : under Seal",
+        "Image": "company-icon-05.svg",
+        "Company": "Unconscionable"
+    },
+    {
+        "id": 5,
+        "Title": "SEO Contracts",
+        "Content": "Category : Contracts under Seal",
+        "Image": "company-icon-01.svg",
+        "Company": "NovaWave LLC"
+    },
+    {
+        "id": 6,
+        "Title": "Redwood Inc",
+        "Content": "Category : Contracts under Seal",
+        "Image": "company-icon-02.svg",
+        "Company": "Unconscionable"
+    },
+    {
+        "id": 7,
+        "Title": "HarborView",
+        "Content": "Implied Contracts",
+        "Image": "company-icon-03.svg",
+        "Company": "Development"
+    },
+    {
+        "id": 8,
+        "Title": "Executory Contracts",
+        "Content": "Category : under Seal",
+        "Image": "company-icon-05.svg",
+        "Company": "NovaWave LLC"
+    }
+]

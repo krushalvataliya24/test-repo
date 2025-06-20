@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "BadgeClass": "badge badge-warning",
+        "Badge": "Partially Paid",
+        "Image": "truellysel.svg",
+        "Title": "Truelysell",
+        "Company": "company-icon-01.svg"
+    },
+    {
+        "id": 2,
+        "BadgeClass": "badge badge-success",
+        "Badge": "Paid",
+        "Image": "dreamchat.svg",
+        "Title": "Dreamschat",
+        "Company": "company-icon-02.svg"
+    },
+    {
+        "id": 3,
+        "BadgeClass": "badge badge-warning",
+        "Badge": "Partially Paid",
+        "Image": "truellysell.svg",
+        "Title": "Truelysell",
+        "Company": "company-icon-03.svg"
+    },
+    {
+        "id": 4,
+        "BadgeClass": "badge badge-success",
+        "Badge": "Paid",
+        "Image": "servbook.svg",
+        "Title": "Servbook",
+        "Company": "company-icon-04.svg"
+    },
+    {
+        "id": 5,
+        "BadgeClass": "badge badge-danger",
+        "Badge": "Unpaid",
+        "Image": "dream-pos.svg",
+        "Title": "DreamPOS",
+        "Company": "company-icon-05.svg"        
+    },
+    {
+        "id": 6,
+        "BadgeClass": "badge badge-warning",
+        "Badge": "Partially Paid",
+        "Image": "project-01.svg",
+        "Title": "Kofejob",
+        "Company": "company-icon-06.svg"
+    },
+    {
+        "id": 7,
+        "BadgeClass": "badge bg-pending",
+        "Badge": "Overdue",
+        "Image": "project-02.svg",
+        "Title": "Doccure",
+        "Company": "company-icon-07.svg"
+    },
+    {
+        "id": 8,
+        "BadgeClass": "badge bg-success",
+        "Badge": "Paid",
+        "Image": "best.svg",
+        "Title": "Best@laundry",
+        "Company": "company-icon-08.svg"
+    }
+]
