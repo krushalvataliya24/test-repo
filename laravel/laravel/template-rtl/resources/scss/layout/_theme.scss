@@ -1,0 +1,1962 @@
+@use "../utils/variables";
+
+[data-sidebar="dark"]{
+    .sidebar {
+        background-color:variables.$dark;
+        .sidebar-menu {
+            .clinicdropdown {
+                a{
+                    background-color:#000000;
+                    .user-names h5{
+                        color: variables.$white;
+                    }
+                }
+            }
+            ul{
+                > li {
+                    ul {
+                        li a {
+                            span{
+                                color: variables.$dark-text;
+                            }
+                        }
+                    }
+                }
+            }
+            .menu-arrow{
+               &:before{
+                    border-left: 2px solid variables.$dark-text;
+                    border-bottom: 2px solid variables.$dark-text;
+               }
+            }
+        }
+    }
+}
+
+ [data-sidebar="blue"]{
+    .sidebar {
+        background-color:#3C2371;
+        .sidebar-menu {
+            .clinicdropdown {
+                a{
+                    background-color:#2f0093;
+                    .user-names {
+                        h5{
+                            color: variables.$white;
+                        }
+                        h6{
+                            color: #e4e4e4;
+                        }
+                    }
+                }
+            }
+             > ul > li .submenu-hdr{
+                color: variables.$white;
+            }
+            ul{
+                > li {
+                    .submenu-hdr{
+                        color: variables.$white;
+                    }
+                    ul {
+                        li {
+                            a {
+                                color: variables.$white;
+                                &.active{
+                                    i{
+                                        background-color:#3C2371;
+                                    }
+                                    span{
+                                        color: #3C2371;
+                                    }
+                                    .menu-arrow::before {
+                                        border-left: 2px solid #3C2371;
+                                        border-bottom: 2px solid #3C2371;
+                                    }
+                                }
+                                span{
+                                    color: variables.$white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .menu-arrow{
+               &:before{
+                    border-left: 2px solid variables.$white;
+                    border-bottom: 2px solid variables.$white;
+               }
+            }
+        }
+    }
+}
+ [data-sidebar="green"]{
+    .sidebar {
+        background-color:#00918E;
+        .sidebar-menu {
+            .clinicdropdown {
+                a{
+                    background-color:#005351;
+                    .user-names {
+                        h5{
+                            color: variables.$white;
+                        }
+                        h6{
+                            color: #e4e4e4;
+                        }
+                    }
+                }
+            }
+             > ul > li .submenu-hdr{
+                color: variables.$white;
+            }
+            ul{
+                > li {
+                    .submenu-hdr{
+                        color: variables.$white;
+                    }
+                    ul {
+                        li {
+                            a {
+                                color: variables.$white;
+                                &.active{
+                                    i{
+                                        background-color:#00918E;
+                                    }
+                                    span{
+                                        color: #00918E;
+                                    }
+                                    .menu-arrow::before {
+                                        border-left: 2px solid #00918E;
+                                        border-bottom: 2px solid #00918E;
+                                    }
+                                }
+                                span{
+                                    color: variables.$white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .menu-arrow{
+               &:before{
+                    border-left: 2px solid variables.$white;
+                    border-bottom: 2px solid variables.$white;
+               }
+            }
+        }
+    }
+}
+
+[data-color="red"]{
+    $primary: #E41F07;
+    .btn-primary {
+        background: $primary;
+        border: 1px solid $primary;
+        &:hover {
+            background: #c11a06;
+            border-color: #c11a06;
+        }
+    }
+}
+ [data-color="yellow"]{
+    $primary: #FFA201;
+    $secondary-100: #FFF6E6;
+    .btn-primary {
+        &:hover {
+            background: #FF9901 !important;
+            border-color: #FF9901 !important;
+        }
+    }
+    .sidebar {
+        .sidebar-menu {
+            > ul {
+                > li {
+                    ul {
+                        li {
+                            a{
+                                &.active{
+                                    color: $primary;
+                                    background: $secondary-100;
+                                     span{
+                                        color: $primary;
+                                     }
+                                    i {
+                                        background:  $primary;
+                                    }
+                                }
+                                &:hover {
+                                    color: $primary;
+                                    span{
+                                        color: $primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .submenu  {
+                        .subdrop.active {
+                            background: $secondary-100;
+                            
+                        }
+                        ul{
+                            li{
+                                a.active{
+                                    background: transparent;
+                                }
+                            }
+                        }
+                        > a.active{
+                            background: transparent;
+                            color: $primary;
+                            i {
+                                background:  $primary;
+                            }
+                            span{
+                                color: $primary;
+                            }
+                            .menu-arrow::before {
+                                border-left: 2px solid $primary;
+                                border-bottom: 2px solid $primary;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    .user-accordion-item .accordion-wrap:not(.collapsed) span{
+        background: $primary;
+    }
+    .page-header .btn-added{
+        background: $primary;
+    }
+    .settings-menu .nav li a.active {
+        color: $primary;
+        border-bottom: 4px solid $primary;
+    }
+    .toggle-popup .sidebar-layout .sidebar-header .toggle-btn:hover, 
+    .toggle-popup1 .sidebar-layout .sidebar-header .toggle-btn:hover, 
+    .toggle-popup2 .sidebar-layout .sidebar-header .toggle-btn:hover{
+        background: $primary;
+        border-color: $primary;
+    }
+    .todo-inbox-check .checkboxs input:checked ~ .checkmarks {
+        border-color: $primary;
+        background-color: $primary;
+    }
+    .custom-pagination .paginations .page-wrap li a.active {
+        background: $primary;
+    }
+    .contact-nav li a:hover, .contact-nav li a.active {
+        color: $primary;
+        border-color: $primary;
+    }
+    .dataTables_paginate .pagination li.active a.page-link, #dataTables_paginate .pagination li.active a.page-link {
+        background:  $primary;
+        border-color:  $primary;
+    }
+    .btn-primary {
+        background: $primary;
+        border: 1px solid $primary;
+    }
+    .select2-container--default .select2-results__option--selected{
+        background: $primary;
+        color: variables.$white;
+    }
+    .view-icons a.active, 
+    .view-icons a:hover{
+        background: $primary;
+    }
+    .btn.btn-primary {
+        background-color: $primary;
+        border: 1px solid $primary;
+    }
+    .form-check-input:checked {
+        background-color: $primary;
+        border-color: $primary;
+    }
+    .breadcrumb .breadcrumb-item.active {
+        color: $primary;
+    }
+    .btn-outline-primary {
+        border: 1px solid $primary !important;
+        color: $primary !important;
+    }
+}
+
+ [data-color="blue"]{
+    $primary: #3C2371;
+    $secondary-100: #ECE9F1;
+    .btn-primary {
+        &:hover {
+            background: #3B4971 !important;
+            border-color: #3B4971 !important;
+        }
+    }
+    .sidebar {
+        .sidebar-menu {
+            > ul {
+                > li {
+                    ul {
+                        li {
+                            a{
+                                &.active{
+                                    color: $primary;
+                                    background: $secondary-100;
+                                     span{
+                                        color: $primary;
+                                     }
+                                    i {
+                                        background:  $primary;
+                                    }
+                                }
+                                &:hover {
+                                    color: $primary;
+                                    span{
+                                        color: $primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .submenu  {
+                        .subdrop.active {
+                            background: $secondary-100;
+                            
+                        }
+                        ul{
+                            li{
+                                a.active{
+                                    background: transparent;
+                                }
+                            }
+                        }
+                        > a.active{
+                            background: transparent;
+                            color: $primary;
+                            i {
+                                background:  $primary;
+                            }
+                            span{
+                                color: $primary;
+                            }
+                            .menu-arrow::before {
+                                border-left: 2px solid $primary;
+                                border-bottom: 2px solid $primary;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    .user-accordion-item .accordion-wrap:not(.collapsed) span{
+        background: $primary;
+    }
+    .page-header .btn-added{
+        background: $primary;
+    }
+    .settings-menu .nav li a.active {
+        color: $primary;
+        border-bottom: 4px solid $primary;
+    }
+    .toggle-popup .sidebar-layout .sidebar-header .toggle-btn:hover, 
+    .toggle-popup1 .sidebar-layout .sidebar-header .toggle-btn:hover, 
+    .toggle-popup2 .sidebar-layout .sidebar-header .toggle-btn:hover{
+        background: $primary;
+        border-color: $primary;
+    }
+    .todo-inbox-check .checkboxs input:checked ~ .checkmarks {
+        border-color: $primary;
+        background-color: $primary;
+    }
+    .custom-pagination .paginations .page-wrap li a.active {
+        background: $primary;
+    }
+    .contact-nav li a:hover, .contact-nav li a.active {
+        color: $primary;
+        border-color: $primary;
+    }
+    .dataTables_paginate .pagination li.active a.page-link, #dataTables_paginate .pagination li.active a.page-link {
+        background:  $primary;
+        border-color:  $primary;
+    }
+    .btn-primary {
+        background: $primary;
+        border: 1px solid $primary;
+    }
+    .select2-container--default .select2-results__option--selected{
+        background: $primary;
+        color: variables.$white;
+    }
+    .view-icons a.active, 
+    .view-icons a:hover{
+        background: $primary;
+    }
+    .btn.btn-primary {
+        background-color: $primary;
+        border: 1px solid $primary;
+    }
+    .form-check-input:checked {
+        background-color: $primary;
+        border-color: $primary;
+    }
+    .breadcrumb .breadcrumb-item.active {
+        color: $primary;
+    }
+    .btn-outline-primary {
+        border: 1px solid $primary !important;
+        color: $primary !important;
+    }
+}
+ [data-color="green"]{
+    $primary: #00918E;
+    $secondary-100: #E6F4F4;
+    .btn-primary {
+        &:hover {
+            background: #005e5c !important;
+            border-color: #005e5c !important;
+        }
+    }
+   .sidebar {
+        .sidebar-menu {
+            > ul {
+                > li {
+                    ul {
+                        li {
+                            a{
+                                &.active{
+                                    color: $primary;
+                                    background: $secondary-100;
+                                     span{
+                                        color: $primary;
+                                     }
+                                    i {
+                                        background:  $primary;
+                                    }
+                                }
+                                &:hover {
+                                    color: $primary;
+                                    span{
+                                        color: $primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .submenu  {
+                        .subdrop.active {
+                            background: $secondary-100;
+                            
+                        }
+                        ul{
+                            li{
+                                a.active{
+                                    background: transparent;
+                                }
+                            }
+                        }
+                        > a.active{
+                            background: transparent;
+                            color: $primary;
+                            i {
+                                background:  $primary;
+                            }
+                            span{
+                                color: $primary;
+                            }
+                            .menu-arrow::before {
+                                border-left: 2px solid $primary;
+                                border-bottom: 2px solid $primary;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    .user-accordion-item .accordion-wrap:not(.collapsed) span{
+        background: $primary;
+    }
+    .page-header .btn-added{
+        background: $primary;
+    }
+    .settings-menu .nav li a.active {
+        color: $primary;
+        border-bottom: 4px solid $primary;
+    }
+    .toggle-popup .sidebar-layout .sidebar-header .toggle-btn:hover, 
+    .toggle-popup1 .sidebar-layout .sidebar-header .toggle-btn:hover, 
+    .toggle-popup2 .sidebar-layout .sidebar-header .toggle-btn:hover{
+        background: $primary;
+        border-color: $primary;
+    }
+    .todo-inbox-check .checkboxs input:checked ~ .checkmarks {
+        border-color: $primary;
+        background-color: $primary;
+    }
+    .custom-pagination .paginations .page-wrap li a.active {
+        background: $primary;
+    }
+    .contact-nav li a:hover, .contact-nav li a.active {
+        color: $primary;
+        border-color: $primary;
+    }
+    .dataTables_paginate .pagination li.active a.page-link, #dataTables_paginate .pagination li.active a.page-link {
+        background:  $primary;
+        border-color:  $primary;
+    }
+    .btn-primary {
+        background: $primary;
+        border: 1px solid $primary;
+    }
+    .select2-container--default .select2-results__option--selected{
+        background: $primary;
+        color: variables.$white;
+    }
+    .view-icons a.active, 
+    .view-icons a:hover{
+        background: $primary;
+    }
+    .btn.btn-primary {
+        background-color: $primary;
+        border: 1px solid $primary;
+    }
+    .form-check-input:checked {
+        background-color: $primary;
+        border-color: $primary;
+    }
+    .breadcrumb .breadcrumb-item.active {
+        color: $primary;
+    }
+    .btn-outline-primary {
+        border: 1px solid $primary !important;
+        color: $primary !important;
+    }
+}
+
+ [data-theme="dark"]{
+    body{
+        background-color:variables.$dark;
+        color: variables.$dark-text;
+    }
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: variables.$white;
+    }
+    .header{
+        background-color:variables.$dark;
+        .header-left{
+            background-color:variables.$dark;
+            .logo{
+                img{
+                    display: none;
+                    &.white-logo{
+                        display: block;
+                    }
+                }
+            }
+            #toggle_btn{
+                color: variables.$white;
+            }
+        }
+        .dropdown-menu{
+            background-color:variables.$dark;
+            box-shadow: none;
+            a{
+                color: variables.$white;
+            }
+            .topnav-dropdown-header {
+                border-color: variables.$dark-border;
+                .notification-title{
+                    color: variables.$white;
+                }
+                
+            }
+        }
+        .menu-drop-user .dropdown-item{
+            border-color: variables.$dark-border;
+        }
+        .notification-dropdown {
+            .notification-list {
+                li {
+                    border-bottom: 1px solid variables.$dark-border;
+                    .noti-title {
+                        color: variables.$white;
+                    }
+                    .noti-details {
+                        color: variables.$white;
+                    }
+                    p.noti-time {
+                        color: variables.$white;
+                    }
+                    .noti-pdf {
+                        .noti-pdf-icon {
+                            span {
+                                border: 1px solid variables.$dark-border;
+                            }
+                        }
+                        .noti-pdf-text {
+                            p {
+                                color: variables.$white;
+                            }
+                            span {
+                                color: variables.$dark-textcolor;
+                            }
+                        }
+                    }
+                    .notification-time {
+                        font-size: variables.$font-size-12;
+                        line-height: 1.35;
+                        color: variables.$gray-600;
+                    }
+                    
+                }
+            }
+            .topnav-dropdown-footer{
+                background: variables.$dark;
+            }
+        }
+        .searchinputs {
+            input{
+                border-color: variables.$dark-border;
+                background: transparent;
+            }
+            .search-addon button{
+                color: variables.$dark-textcolor;
+            }
+        }
+        .menus-info {
+            .menu-list {
+                li {
+                    a {
+                        background: transparent;
+                        border-radius: variables.$border-radius-lg;
+                        &:hover {
+                            background: transparent;
+                        }
+                        .menu-details {
+                            .menu-list-icon {
+                                color: variables.$white;
+                            }
+                            .menu-details-content {
+                                p {
+                                    color: variables.$white;
+                                    margin-bottom: 0;
+                                }
+                                span {
+                                    font-weight: variables.$font-weight-normal;
+                                    color: variables.$dark-textcolor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sidebar {
+        background-color:variables.$dark;
+        .sidebar-menu {
+            .clinicdropdown {
+                a{
+                    background-color:#28283E;
+                    .user-names h5{
+                        color: variables.$white;
+                    }
+                }
+            }
+            ul{
+                > li {
+                    ul {
+                        li a {
+                            span{
+                                color: variables.$dark-text;
+                            }
+                        }
+                    }
+                }
+            }
+            .menu-arrow{
+               &:before{
+                    border-left: 2px solid variables.$dark-text;
+                    border-bottom: 2px solid variables.$dark-text;
+               }
+            }
+        }
+    }
+    .contact-grid.proposals-grid .grid-head .table-action .action-icon{
+        background: #393947;
+        color: variables.$white;
+    }
+    .contact-grid.proposals-grid .grid-footer {
+        background: #171724;
+        border-color: #393947;
+        color: variables.$white;
+    }
+    .title-head {
+        color: variables.$white;
+    }
+    .sidebar-themesettings {
+        background: variables.$dark;
+        .themesettings-header {
+            border-color: variables.$dark-border;
+            h4 {
+                color: variables.$white;
+            }
+        } 
+        .themesettings-inner {
+            background: variables.$dark-bg;
+            border-color: variables.$dark-border;
+            .themesettings-content {
+                border-color: variables.$dark-border;
+                h6 {
+                    color: variables.$white;
+                }
+            }
+        }
+        .input-themeselect {
+            border-color: variables.$dark-border;
+            background: variables.$dark;
+            .checkboxs-theme:after {
+                border-color: variables.$dark-border;
+            }
+        }
+    }
+    .form-check-label,
+    .form-label,
+    .sub-header{
+        color: variables.$dark-text;
+    }
+    .form-select {
+        option{
+            background: transparent;
+        }
+    }
+    .icon-form{
+        .form-icon {
+            color: variables.$dark-text;
+        }
+    }
+    .drop-down > a,
+    .export-dropdwon > a,
+    .form-sorts > a{
+        border-color: variables.$dark-border;
+        box-shadow: none;
+        background-color: #1A1A25;
+        color: variables.$dark-text;
+        &:hover{
+            color: variables.$dark-text;
+        }
+    }
+    .manage-dropdwon {
+        .dropdown-menu{
+            border-color: variables.$dark-border;
+            background-color: #1A1A25;
+            color: variables.$dark-text;
+            box-shadow: none;
+        }
+    }
+    .form-sorts {
+        .filter-set-content {
+            .filter-set-content-head {
+                a{
+                    color: variables.$dark-text;
+                }
+            }
+        }
+    }
+    .header-set .select2-container--default {
+        .select2-selection--single {
+            border-color: variables.$dark-border;
+        }
+    }
+    .form-sorts {
+        .filter-dropdown-menu{
+            border-color: variables.$dark-border;
+            background-color: #1A1A25;
+            color: variables.$dark-text;
+            box-shadow: none;
+        }
+    }
+    .status-radio:checked + label, 
+    .status-radio:not(:checked) + label{
+        color: variables.$dark-text;
+    }
+    .filter-set-contents {
+        .filter-content-list{
+            border-color: variables.$dark-border;
+            background-color: #1A1A25;
+            color: variables.$dark-text;
+        }
+    }
+    .dataTables_length label .form-select,
+     #dataTables_length label .form-select{
+        border-color: variables.$dark-border;
+        box-shadow: none;
+        background-color: #1A1A25;
+        color: variables.$dark-text;
+    }
+    .view-icons{
+        border-color: variables.$dark-border;
+    }
+    .toast {
+        background-color: #1A1A25;
+    }
+    .select2-selection--multiple{
+        border-color: variables.$dark-border;
+        background: variables.$dark;
+        box-shadow: none;
+        color: variables.$dark-text;
+    }
+    .twitter-bs-wizard {
+        .twitter-bs-wizard-nav .step-icon{
+            border-color: variables.$white;
+            color: variables.$white;
+        }
+    }
+    .text-dark {
+        color: variables.$dark-text !important;
+    }
+    .select2-container--default {
+        .select2-selection--single{
+            border-color: variables.$dark-border;
+            background: variables.$dark;
+            box-shadow: none;
+            .select2-selection__rendered{
+                box-shadow: none;
+                border:1px solid variables.$dark-border;
+                background: variables.$dark;
+                color: variables.$dark-text;
+            }
+            .select2-selection__arrow{
+                box-shadow: none;
+            }
+        }
+    }
+    .toggle-popup .sidebar-layout, 
+    .toggle-popup1 .sidebar-layout, 
+    .toggle-popup2 .sidebar-layout{
+        border-color: variables.$dark-border;
+        background: variables.$dark;
+    }
+    .user-accordion-item {
+        .accordion-wrap{
+            color: variables.$dark-text;
+            &:hover {
+                color: variables.$dark-text;
+            }
+        }
+        .content-collapse {
+            border-color: variables.$dark-border;
+        }
+    }
+    .bootstrap-tagsinput{
+        background: variables.$dark;
+        border-color: variables.$dark-border;
+    }
+    .user-accordion-item,
+    .files-wrap,
+    .contact-wrap,
+    .notes-activity .note-download,
+    .contact-tab-wrap,
+    .contact-tab-view,
+    .calls-box,
+    .notes-activity .reply-box ,
+    .note-download
+    {
+        border-color: variables.$dark-border;
+        background: variables.$dark;
+        box-shadow: none;
+    }
+    .contact-sidebar, .contact-tab-view {
+        background-color: variables.$dark-bg;
+        box-shadow: none;
+    }
+    .action-drop{
+        .dropdown-toggle{
+            border-color: variables.$dark-border;
+            color: variables.$dark-text;
+        }
+    }
+    .upcoming-info{
+        border-color: variables.$dark-border;
+    }
+    .calls-box {
+        .caller-info {
+            .calls-user p span {
+                color: variables.$dark-text;
+                font-weight: 500;
+            }
+            .calls-action .dropdown-toggle{
+                color: variables.$dark-text;
+                border-color: variables.$dark-border;
+            }
+        }
+    }
+    .bootstrap-tagsinput{
+        box-shadow: none;
+    }
+    .contact-grid {
+        color: variables.$dark-text;
+        border-color: variables.$dark-border;
+        background: variables.$dark;
+        box-shadow: none;
+        .grid-head {
+            .users-profile {
+                .name-user {
+                    h6 {
+                        a{
+                            color: variables.$white;
+                        }
+                    }
+                }
+            }
+        }
+        .grid-body{
+            .address-info{
+                p{
+                    i{
+                        color: variables.$dark-text; 
+                    }
+                }
+            }
+        }
+        .grid-footer{
+            border-color: variables.$dark-border; 
+        }
+    }
+    .company-info li span{
+        border-color: variables.$dark-border; 
+    }
+    .contacts-action{
+        .btn-icon,.btn-icon.rating{
+            color: variables.$dark-text;
+            border-color: variables.$dark-border;
+            background: variables.$dark;
+        }
+        .act-dropdown > a{
+            color: variables.$dark-text;
+            border-color: variables.$dark-border;
+            background: variables.$dark;
+        }
+    }
+    .social-info li a{
+        color: variables.$dark-text;
+        border-color: variables.$dark-border;
+        background: variables.$dark; 
+    }
+    .view-header {
+        .form-sort{
+            .select2-container {
+                .select2-selection {
+                    .select2-selection__rendered{
+                        color: variables.$dark-text; 
+                    }
+                }
+            }
+        }
+    }
+    .basic-info li span{
+        color: variables.$dark-text;
+        border-color: variables.$dark-border;
+        background: variables.$dark; 
+    }
+    .badge-day{
+        color: variables.$dark-text;
+        background: #3d3d64; 
+    }
+    .contact-nav li a {
+        border-color: transparent;
+    }
+    .upcoming-info .dropdown .dropdown-toggle{
+        color: variables.$dark-text;
+    }
+    .contact-sidebar ul,.view-header,.activity-wrap{
+        border-color: variables.$dark-border;
+    }
+    .search-section{
+        border-color: variables.$dark-border;
+    }
+    .select2-container--default .select2-results__option--selected{
+        background: variables.$primary;
+        color: variables.$white;
+    }
+    .form-floating > .form-control:not(:placeholder-shown) ~ label::after{
+        background: transparent;
+    }
+    .select2-dropdown{
+        border-color: variables.$dark-border;
+        background: variables.$dark;
+       
+        ul{
+            li{
+                color: variables.$white;
+            }
+        }
+    }
+    .btn-outline-light{
+        color: variables.$dark-text !important;
+    }
+    .page-wrapper {
+        background: #151525;
+        .page-header{
+            h3{
+                color: variables.$white;
+            }
+            h4{
+                color: variables.$white;
+            }
+            .head-icons a{
+                border-color: variables.$dark-border;
+                background: transparent;
+                color: variables.$white;
+            }
+        }
+        .page-title{
+            color: variables.$white;
+        }
+    }
+    .note-editable.card-block{
+        color: variables.$white;
+    }
+    .accordion-item{
+        border-color: variables.$dark-border;
+        background: variables.$dark;
+        .accordion-body{
+            border-color: variables.$dark-border;
+            background: #28283E;
+        }
+    }
+    .accordion-button{
+        border-color: variables.$dark-border;
+        background: #28283E;
+    }
+    .seprator-lg {
+        border-color: variables.$dark-border;
+    }
+    .card{
+        background: variables.$dark-bg;
+        box-shadow: none;
+        &.bg-white {
+            background: variables.$dark-bg !important;
+        }
+        &.main-card{
+            background: #28283E;
+            box-shadow: none;
+        }
+        &.custom-card{
+            background: #28283E;
+            .card-header{
+                border-color: variables.$dark-border;
+            }
+            .card-footer{
+                border-color: variables.$dark-border;
+            }
+        }
+        .card-header {
+            border-color: variables.$dark-border;
+            .card-title{
+                color: variables.$white;
+            }
+            .card-text{
+                color: variables.$dark-text;
+            }
+        }
+        .card-body{
+            color: variables.$dark-text;
+        }
+    }
+    .col-form-label{
+        color: variables.$dark-text;
+    }
+    .custom-table{
+        .table-responsive{
+            border-color: variables.$dark-border;
+        }
+    }
+    .btn-purple-light{
+        background:variables.$dark;
+        border-color: variables.$dark-border;
+        color: variables.$dark-text;
+        &:hover{
+            background:variables.$dark;
+            border-color: variables.$dark-border;
+            color: variables.$dark-text;
+        }
+    }
+    .note-toolbar{
+        background:variables.$dark;
+    }
+    .note-btn-group .note-btn{
+        background:variables.$dark;
+        border-color: variables.$dark-border;
+        color: variables.$dark-text;
+    }
+    .note-toolbar{
+        border-color: variables.$dark-border;
+    }
+    .table-action {
+        .action-icon{
+            background:variables.$dark;
+            border-color: variables.$dark-border;
+            color: variables.$white;
+            &:hover {
+                    background: variables.$dark-input;
+                    color: variables.$white;
+                    i {
+                        color: variables.$white;
+                    }
+                }
+        }
+    }
+    .toggle-popup {
+        .sidebar-layout .sidebar-header{
+            border-color: variables.$dark;
+        }
+    }
+    table{
+        
+        &.table{
+            &.table-primary{
+                background:variables.$dark;
+            }
+             thead  {
+                border-color: variables.$dark-border;
+                 tr {
+                    border-color: variables.$dark-border;
+                    th{
+                        background: variables.$dark;
+                        color: variables.$white;
+                        border-color: variables.$dark-border;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        background:variables.$dark;
+                        color: variables.$dark-textcolor;
+                        border-color: variables.$dark-border;
+                    }
+                }
+            }
+            &.dataTable {
+                border-color: variables.$dark-border;
+                > thead  {
+                    border-color: variables.$dark-border;
+                    >  tr {
+                        border-color: variables.$dark-border;
+                        th{
+                            background: variables.$dark;
+                            color: variables.$white;
+                            border-color: variables.$dark-border;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        td{
+                            background:variables.$dark;
+                            color: variables.$dark-textcolor;
+                            border-color: variables.$dark-border;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .statistic-header {
+        h4{
+            i{
+                color:#B5B5B5;
+            }
+            color: variables.$white;
+        }
+        .statistic-dropdown {
+            .dropdown-toggle {
+                color: variables.$white;
+                border: 1px solid #1A1A25;
+                box-shadow: none;
+                background:  #1A1A25;
+                &:after{
+                    border-bottom: 2px solid #B5B5B5;
+                    border-left: 2px solid #B5B5B5;
+                }
+            }
+            .dropdown-menu{
+                border-color: variables.$dark-border;
+                background: variables.$dark;
+                a{
+                    background: transparent;
+                    color: variables.$white;
+                }
+            }
+        }
+    }
+    .toggle-popup .sidebar-layout .sidebar-header, 
+    .toggle-popup1 .sidebar-layout .sidebar-header, 
+    .toggle-popup2 .sidebar-layout .sidebar-header {
+        border-color:variables.$dark-border;
+    }
+    .form-control,.form-select{
+        border-color:variables.$dark-border;
+        background: variables.$dark;
+        color: variables.$dark-text;
+        box-shadow: none; 
+        &:disabled{
+            border-color:variables.$dark-border;
+            background: variables.$dark;
+            color: variables.$dark-text;
+        }
+        &:focus{
+            border-color:variables.$dark-border;
+            background: variables.$dark;
+            color: variables.$dark-text;
+        }
+    }
+    .input-group-text{
+        background:variables.$dark-border;
+        color: variables.$dark-text;
+        border-color:variables.$dark-border;
+    }
+    .radio,.checkbox{
+        label{
+            color: variables.$dark-text;
+        }
+    }
+    .apexcharts-text tspan{
+        fill: variables.$white;
+    }
+    a {
+        color: variables.$white;
+        &.label-add {
+            color: variables.$primary;
+        }
+    }
+    .settings-sub-header {
+        border-color: variables.$dark-border;
+    }
+    .profile-details {
+        border-color: variables.$dark-border;
+    }
+    .profile-upload .profile-upload-img {
+        border-color: variables.$dark-border; 
+    }
+    .settings-sidebar {
+        ul {
+            li {
+                a {
+                    color: variables.$dark-textcolor;
+                    &:hover {
+                        color: variables.$white;
+                    }
+                    &.active {
+                        background: variables.$darkmode-hover;    
+                        color: variables.$white;
+                    }
+                }
+            }
+        }
+    }
+    .btn {
+        &.btn-light {
+            background-color: variables.$dark-input;
+            border-color: variables.$dark-border;
+            color: variables.$white;
+            &:hover {
+                background-color: variables.$dark-hover;
+                border-color: variables.$dark-border;
+                color: variables.$white;
+            }
+            
+        }       
+    }
+    .security-grid {
+        border-color: variables.$dark-border;
+        background: variables.$dark-bg;
+        .security-heading {
+            h5 {
+                color: variables.$white;
+            }
+        }
+    }
+    .notification-wrap {
+        ul {
+            li {
+                .security-checkbox {
+                    .checkboxs {
+                        color: variables.$white;
+                    }
+                }
+            }
+        }
+    }
+    .notificaion-table .table {
+         tbody {
+            tr {
+                td { 
+                    color: variables.$white;
+                }
+            }
+        }
+    }
+    .integration-grid {
+        background: variables.$gray-bg;
+        border-color: variables.$gray-bg;
+        .integration-content { 
+            p {
+                color: variables.$white;
+            }
+        }
+    }
+    .storage-wrap {
+        background: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        .storage-icon {
+            h6 {
+                color: variables.$white;
+            }
+        }
+    }
+    .black-text {
+        color: variables.$white !important;
+    }
+    .theme-type-images {
+        .theme-image {
+            background: variables.$dark;  
+            border-color: variables.$dark-border;
+            span {
+                color: variables.$white;
+            }
+        }
+    }
+    .table tbody tr td a {
+        color: variables.$white;
+    }
+    .text-black {
+        color: variables.$white !important;
+    }
+    .lang-flag {
+        a {
+            border-color: variables.$dark-border;
+            color: variables.$white;
+        }
+    }
+    .modal {
+        .modal-content {
+            background: variables.$dark-bg;
+            border-color: variables.$dark-border;
+            .modal-header {
+                 border-color: variables.$dark-border;
+            }
+            .col-form-label {
+                color: variables.$white;
+            }
+        }
+    }
+    .drag-attach {
+        border-color: variables.$dark-border;
+    }
+    .upload-file {
+        border-color: variables.$dark-border;
+        background: variables.$dark;  
+    }
+    .lang-type li {
+        a {
+            background: variables.$dark;  
+        }
+    }
+    .dropdown-menu {
+        background: variables.$dark-bg;
+        border-color: variables.$dark-border;
+    }
+    .table-action .dropdown-menu {
+        a {
+            color: variables.$dark-textcolor;
+            &:hover {
+                background: variables.$darkmode-hover;
+                color: variables.$white;
+            }
+        }
+    }
+    .btn-add {
+        background: variables.$dark-input;
+        border-color: variables.$dark-border;
+        color: variables.$white;
+    }
+    .settings-sub-header.setting-item {
+        .table-action {
+            .action-icon {
+                background: variables.$dark-input;
+                border-color: variables.$dark-border;
+                &:hover {
+                    background: variables.$dark-input;
+                    color: variables.$white;
+                    i {
+                        color: variables.$white;
+                    }
+                }
+            }
+        }
+    }
+    .mail-wrapper {
+        background: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        .mail-wrap {
+            .email-action .info-icon {
+                &:hover {
+                    color: variables.$white;
+                }
+                &::after {
+                    background: variables.$dark-border;
+                }
+            }
+        }
+        .mail-collapse {
+             border-color: variables.$dark-border;
+         }
+    }
+    .bank-box {
+        background: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        &.active {
+            &::after {
+                background-color: variables.$gray-bg;
+            }
+        }
+        .table-action {
+            .action-icon {
+                &:hover {
+                    background: variables.$dark-input;
+                }
+            }
+        }
+    }
+    .custom-modal {
+        .modal-header {
+            .btn-close {
+                border-color: variables.$dark-border;
+                background: variables.$dark-input;
+                box-shadow: none;
+            }
+        }
+    }
+    .storage-wrap {
+        .storage-icon {
+            .system-app-icon {
+                background: variables.$dark-bg;
+                border-color: variables.$dark-border;
+            }
+        }
+        .setting-gateway {
+            a {
+                color: variables.$dark-textcolor;
+            }
+        }
+    }
+    .ip-wrap {
+        background: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        .table-action {
+            .action-icon {
+                 background: variables.$gray-bg;
+                 border-color: variables.$dark-border;
+                 &:hover {
+                    background: variables.$gray-bg;
+                    border-color: variables.$dark-border;
+                 }
+            }
+        }
+    }
+    .action-drop {
+        .dropdown-item {
+            color: variables.$dark-textcolor;
+            &:hover {
+                background: variables.$gray-bg;
+                color: variables.$white;
+            }
+        }
+    }
+    .notes-activity .note-download {
+        &:hover {
+            background-color: transparent;
+            a {
+                background: variables.$darkmode-hover;
+                color: variables.$dark-textcolor;
+            }
+        }
+        a {
+            background: variables.$darkmode-hover;
+            color: variables.$dark-textcolor;
+        }
+    }
+    .calls-box .caller-info .calls-action .dropdown-menu {
+        border-color: variables.$dark-border;
+        .dropdown-item {
+             &:hover {
+                background: variables.$gray-bg;
+                color: variables.$white;
+            }
+        }
+    }
+    .bootstrap-tagsinput .tag {
+        background: variables.$darkmode-hover;
+    }
+    .contacts-action .act-dropdown .dropdown-item {
+        color: variables.$dark-textcolor;
+         &:hover {
+            background: variables.$gray-bg;
+            color: variables.$white;
+        }
+    }
+    .profile-pic-upload .profile-pic {
+        border-color: variables.$dark-border;
+    }
+    .contact-wrap .contact-profile {
+        .avatar.company-avatar {
+            border-color: variables.$dark-border;
+        }
+
+    }
+    .select2-container--default.select2-container--focus .select2-selection--multiple,
+    .select2-container--default .select2-selection--multiple {
+        border-color: variables.$dark-border;
+    }
+    .select2-container--classic .select2-selection--multiple .select2-selection__choice, 
+    .select2-container--default .select2-selection--multiple .select2-selection__choice, 
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        background: variables.$darkmode-hover;
+        border-color: variables.$dark-border;
+    }
+    .title-name {
+        color: variables.$white !important;
+    }
+    .kanban-list-items {
+        border-color: variables.$dark-border;
+        .kanban-list-head {
+            background: variables.$gray-bg;
+            .kanban-action-btns .table-action .action-icon {
+                background: variables.$gray-bg;
+                border-color: variables.$dark-border;
+            }
+
+        }
+    }
+    .email-header .btn-white {
+        border-color: variables.$dark-border;
+        color: variables.$white;
+    }
+    .pipeline-list {
+        border-color: variables.$dark-border;
+    }
+    .priority-info .dropdown .dropdown-toggle {
+        border-color: variables.$dark-border;
+        color: variables.$dark-textcolor;
+    }
+    .priority-info .dropdown a {
+        color: variables.$dark-textcolor;
+    }
+    .pipeline-item {
+        border-color: variables.$dark-border;
+        p {
+            color: variables.$white;
+        }
+    }
+    .kanban-card {
+        background: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        .kanban-card-body ul li {
+            color: variables.$dark-textcolor;
+        }
+        .kanban-card-footer {
+            border-color: variables.$dark-border;
+            span {
+                border-color: variables.$dark-border;
+            }
+        }
+    }
+    .campaign-tab {
+        background: variables.$gray-bg;
+        ul {
+            li {
+                a {
+                    border-color: transparent;
+                    &.active {
+                        color: variables.$primary;
+                    }
+                    span {
+                         border-color: variables.$dark-border;
+                    }
+                }
+            }
+        }
+    }
+    ul.project-mem li.more-set a {
+        background: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        color: variables.$dark-textcolor;
+    }
+    .pipeline-progress span, .task-info p,
+    .con-sidebar-title p, .task-actions ul li {
+        color: variables.$white;
+    }
+    .contact-grid.project {
+        .grid-head {
+            background-color: variables.$gray-bg;
+            .users-profile .con-avatar {
+                background-color: variables.$dark-bg;
+                border-color: variables.$dark-border;
+            }
+        }
+    }
+    .access-wrap li:hover {
+        background: variables.$gray-bg;
+    }
+    .task-wrap {
+        background: variables.$gray-bg;
+        border-color: variables.$dark-border;
+    }
+    .rate-icon, .con-sidebar-title.border-line {
+        border-color: variables.$dark-border;
+    }
+    .pipeline-list ul li a.bg-gray {
+        color: variables.$title-color;
+    }
+    .task-wrapper .task-accordion span {
+        border-color: variables.$dark-border;
+        color: variables.$dark-textcolor;
+    }
+    .task-drops .dropdown-toggle {
+        background-color: transparent;
+    }
+    .task-wrapper {
+        border-color: variables.$dark-border;
+    }
+    .card.analytics-card {
+        background-color: variables.$dark-bg;
+        .card-header {
+            background: transparent;
+            .select2-container--default .select2-selection--single {
+                .select2-selection__rendered {
+                    color: variables.$white;
+                }
+            }
+        }
+    }
+    .activities-list ul li {
+        background: variables.$gray-bg;
+        .activity-name h5 {
+            color: variables.$white;
+        }
+    }
+    .campaign-card ul .campaign-wrap {
+        background: variables.$gray-bg;
+        .campaign-info {
+            border-color: variables.$dark-border;
+            h5 {
+                color: variables.$white;
+            } 
+        }
+    }
+    .card.analytics-card .card-body .table {
+        th {
+            background: variables.$dark;
+            color: variables.$white;
+            &:first-child,&:last-child {
+                border-color: variables.$dark-border;
+            }
+        }
+        td {
+            &:first-child, &:last-child  {
+                border-color: variables.$dark-border;
+            }
+        }
+    }
+    .active-list ul li {
+        a {
+            background: variables.$dark-input;
+            border-color: variables.$dark-border;
+            color: variables.$white;
+        }
+    }
+    .activity-title h4::after {
+        background: variables.$dark-border;
+    }
+    .header-set {
+        border-color: variables.$dark-border;
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: variables.$white;
+        }
+    }
+    .radio-activity li .active-type input[type=radio] ~ label {
+        background: variables.$dark-input;
+        border-color: variables.$dark-border;
+        color: variables.$white;
+    }
+    .tab-activity {
+        box-shadow: none;
+        ul li a span {
+            color: variables.$dark-textcolor;
+            border-color: variables.$dark-border;
+        }
+    }
+    .report-header {
+        border-color: variables.$dark-border;
+    }
+    .location-flag-img {
+        border-color: variables.$dark-border;        
+    }
+    .table-imgname.flag-image {
+        span {
+            color: variables.$white;
+        }
+    }
+    .membership-plans .plan-selected h4 {
+        color: variables.$white;
+    }
+    .membership-plan-grid {
+        background-color: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        .plan-price-head {
+            border-color: variables.$dark-border;
+            .plan-type {
+                color: variables.$white;
+            }
+        }
+        .plans-features ul li {
+            color: variables.$white;
+        }
+        &.active {
+            background-color: variables.$dark-bg;
+            .plan-price-head {
+                border-color: variables.$dark-border;
+                .plan-type {
+                    color: variables.$white;
+                }
+            }
+            .plans-features ul li {
+                color: variables.$white;
+            }
+        }
+    }
+    .file-manager aside {
+        border-color: variables.$dark-border;
+    }
+    .notes-dash {
+        background-color: variables.$gray-bg;
+        .notes-top-head {
+            border-color: variables.$dark-border;
+        }
+        .notes-top-head-submenu {
+            border-color: variables.$dark-border;
+        }
+    }
+    .notes-page-wrapper .content .section-card-body .notes-card-details {
+        background-color: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        box-shadow: none;
+    }
+    .search-set .search-input input[type=search] {
+        background-color: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        &::placeholder {
+            color: variables.$dark-textcolor;
+        }
+    }
+    .todo-wrapper-list {
+        background-color: variables.$gray-bg;
+        border-color: variables.$dark-border;
+    }
+    .notes-page-wrapper .content {
+        .section-bulk-wrap {
+            background-color: variables.$gray-bg;
+            box-shadow: none;
+        }
+        .page-add-notes {
+            border-color: variables.$dark-border;
+        }
+        .section-notes-slider {
+            border-color: variables.$dark-border;
+        }
+    }
+    .fc-day {
+        background-color: variables.$gray-bg;
+    }
+    .file-manager .folders {
+        border-color: variables.$dark-border;
+        background-color: variables.$gray-bg;
+    }
+    .file-manager .accordion .accordion-item .accordion-body {
+        background: transparent;
+    }
+    table tbody td.action-table-data a {
+        background-color: variables.$gray-bg;
+    }
+    .main-chat-blk .chat {
+        background-color: variables.$gray-bg;
+    }
+    .main-chat-blk .chat .chat-header {
+        background-color: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        box-shadow: none;
+    }
+    .main-chat-blk .main-wrapper .content .sidebar-group .sidebar {
+        background-color: variables.$gray-bg;
+    }
+    .main-chat-blk .chat-page-wrapper .left-chat-title {
+        background-color: variables.$gray-bg;
+        border-color: variables.$dark-border;
+    }
+    .main-chat-blk .chat .chat-header .user-details h5 {
+        color: variables.$white;
+    }
+    .main-chat-blk .sidebar .user-list li .users-list-body {
+        h5 {
+            color: variables.$white;
+        }
+        p {
+            color: variables.$dark-textcolor;
+        }
+    }
+    .main-chat-blk .chat-page-wrapper .setting-title-head h4 {
+        color: variables.$white;
+    }
+    .main-chat-blk .sidebar .user-list li .users-list-body .last-chat-time .text-muted {
+        color: variables.$dark-textcolor !important;
+    }
+    .main-chat-blk .chat .chat-body .messages .chat-profile-name h6 {
+        color: variables.$white;
+    }
+    .main-chat-blk .sidebar .user-list li a {
+        border-color: variables.$dark-border;
+    }
+    .main-chat-blk .last-seen {
+         color: variables.$dark-textcolor;
+    }
+    .daterangepicker {
+        background-color: variables.$gray-bg;
+        border-color: variables.$dark-border;
+        &.show-ranges.ltr .drp-calendar.left {
+            border-color: variables.$dark-border;
+        }
+        .drp-buttons {
+            border-color: variables.$dark-border;
+            .btn-default {
+                color: variables.$dark-textcolor;
+            }
+        }
+    } 
+}
+[data-sidebar-bg="sidebarbgnone"] {
+    .sidebar {
+        background-image: none;
+    }
+}
+
+[data-sidebar-bg="sidebarbg1"]{
+    .sidebar {
+        background-image: url(../img/theme/bg-1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-color: transparent;
+        .sidebar-menu{
+            background: rgba(255,255,255,0.85);
+        }
+    }
+}
+
+[data-sidebar-bg="sidebarbg2"]{
+    .sidebar {
+        background-image: url(../img/theme/bg-2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-color: transparent;
+        .sidebar-menu{
+            background: rgba(255,255,255,0.85);
+        }
+    }
+}
+
+[data-sidebar-bg="sidebarbg3"]{
+    .sidebar {
+        background-image: url(../img/theme/bg-3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-color: transparent;
+        .sidebar-menu{
+            background: rgba(255,255,255,0.85);
+        }
+    }
+}
+
+[data-sidebar-bg="sidebarbg4"]{
+    .sidebar {
+        background-image: url(../img/theme/bg-4.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-color: transparent;
+        .sidebar-menu{
+            background: rgba(255,255,255,0.85);
+        }
+    }
+}
+[data-theme="dark"]{
+    .border,.border-top,.border-bottom,.border-start,.border-end {
+        border-color: variables.$dark-border !important;
+    }
+    .dropdown .dropdown-toggle {
+        border-color: variables.$dark-border;
+        color: variables.$dark-textcolor;
+    }
+    .dropdown .dropdown-menu {
+        background: variables.$dark;
+        border-color: variables.$dark-border;
+    }
+    .bg-white {
+        background: variables.$dark !important;
+    }
+    .bg-light-200,.bg-light-300,.bg-light-400 {
+        background: variables.$dark-input;
+    }
+    .dropdown .dropdown-menu .dropdown-item {
+        background: variables.$dark-input;
+    }
+    .offcanvas {
+        background: variables.$dark;
+    }
+    .accordion-button:after {
+        background: transparent;
+    }
+    .bg-success.border {
+        border-color: variables.$success !important;
+    }
+    .bg-purple.border {
+        border-color: variables.$purple !important;
+    }
+    .bg-warning.border {
+        border-color: variables.$warning !important;
+    }
+    .bg-danger.border {
+        border-color: variables.$danger !important;
+    }
+    .btn-close {
+        --bs-btn-close-color: $dark-text;
+        color: variables.$white;
+    }
+    .input-themeselect{
+        span{
+            color: variables.$white;
+        }
+    }
+}
+ 
