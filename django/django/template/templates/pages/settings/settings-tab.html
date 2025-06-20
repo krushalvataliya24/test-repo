@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-body pb-0 pt-2">
+    <ul class="nav nav-tabs nav-tabs-bottom">
+      <li class="nav-item me-3">
+        <a href="{% url 'profile' %}" class="nav-link px-0 {% if request.path == '/crms/template/profile' or request.path == '/crms/template/security' or request.path == '/crms/template/notifications' or request.path == '/crms/template/connected-apps' %}active{% endif %}"><i class="ti ti-settings-cog me-2"></i>General Settings</a>
+      </li>
+      <li class="nav-item me-3">
+        <a href="{% url 'company_settings' %}" class="nav-link px-0 {% if request.path == '/crms/template/company-settings' or request.path == '/crms/template/localization' or request.path == '/crms/template/prefixes' or request.path == '/crms/template/preference' or request.path == '/crms/template/appearance' or request.path == '/crms/template/language' %}active{% endif %}"><i class="ti ti-world-cog me-2"></i>Website Settings</a>
+      </li>
+      <li class="nav-item me-3">
+        <a href="{% url 'invoice_settings' %}" class="nav-link px-0 {% if request.path == '/crms/template/invoice-settings' or request.path == '/crms/template/printers' or request.path == '/crms/template/custom-fields' %}active{% endif %}"><i class="ti ti-apps me-2"></i>App Settings</a>
+      </li>
+      <li class="nav-item me-3">
+        <a href="{% url 'email_settings' %}" class="nav-link px-0 {% if request.path == '/crms/template/email-settings' or request.path == '/crms/template/sms-gateways' or request.path == '/crms/template/gdpr-cookies' %}active{% endif %}"><i class="ti ti-device-laptop me-2"></i>System Settings</a>
+      </li>
+      <li class="nav-item me-3">
+        <a href="{% url 'payment_gateways' %}" class="nav-link px-0 {% if request.path == '/crms/template/payment-gateways' or request.path == '/crms/template/bank-accounts' or request.path == '/crms/template/tax-rates' or request.path == '/crms/template/currencies' %}active{% endif %}"><i class="ti ti-moneybag me-2"></i>Financial Settings</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'storage' %}" class="nav-link px-0 {% if request.path == '/crms/template/storage' or request.path == '/crms/template/ban-ip-address' %}active{% endif %}"><i class="ti ti-flag-cog me-2"></i>Other Settings</a>
+      </li>
+    </ul>
+  </div>
+</div>
